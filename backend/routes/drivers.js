@@ -3,15 +3,18 @@ const { driverService } = require("../services")
 const router = require("express").Router()
 
 router.get("/" , async ( req, res) => {//söförleri yükle
-    const drivers = await driverService.load()
+    // const drivers = await driverService.load()
     res.send(await driverService.load())
     // res.render("drivers", { drivers })
 })
 
-router.post("/", async (req, res) => {//söförleri gönder
-    const driver = await driverService.insert(req.body)
-
-    res.send(driver)
+router.post("/", async (req, res , next) => {//söförleri gönder
+    try {
+        const driver = await driverService.insert(req.body)
+        res.send(driver)
+    } catch(e) {
+        next(e)
+    }
 })
 
 router.delete("/:driverId", async (req, res) => {//söförleri sil

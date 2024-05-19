@@ -36,6 +36,10 @@ export const useCounterStore = defineStore('counter', () => {
     const request = await axios.post("/passengers", passengerData)
     return request.data
   }
+  async function addDriver(driverData) {
+    const request = await axios.post("/drivers", driverData)
+    return request.data
+  }
 
 
   return {
@@ -47,6 +51,7 @@ export const useCounterStore = defineStore('counter', () => {
     fetchDrivers,
     fetchDriver,
     bookDriver,
-    addPassenger
+    addPassenger,
+    addDriver
   }
 })

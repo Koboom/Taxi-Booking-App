@@ -7,7 +7,7 @@ services:
   backend:
     build: backend
     environment:
-      MONGODB_CONNECTION_STRING: "mongodb://localhost/taxi-booking"
+      MONGODB_CONNECTION_STRING: "mongodb://mongodb/taxi-booking"
     ports:
       - 3000:3000
   mongodb:

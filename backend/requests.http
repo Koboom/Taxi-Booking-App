@@ -1,7 +1,7 @@
 POST http://localhost:3000/passengers HTTP/1.1
 content-type: application/json
 
-{"name":"Nilgün","surname":"Türkmen", "location": "Bielefeld"}
+{"name":"Fatma","surname":"Türkmen", "location": "Ankara"}
 
 ###
 
