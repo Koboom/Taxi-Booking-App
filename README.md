@@ -27,7 +27,12 @@ npm run dev
 ```sh
 npm run build
 ```
+# backend
 
+Compile and Hot-Reload for Development
+```sh
+npm run watch
+```
 
 This is a small fullstack web application to combine frontend and backend.
 
