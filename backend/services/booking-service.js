@@ -1,7 +1,7 @@
 const BaseService = require("./base-service")
 const Booking = require("../models/booking")
 const driverService = require("./driver-service")
-const passengerService = require("./driver-service")
+const passengerService = require("./passenger-service")
 
 class BookingService extends BaseService {
     async findByPassengerId(passengerId) {

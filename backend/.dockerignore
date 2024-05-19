@@ -1,0 +1,12 @@
+node_modules
+coverage
+tests
+requests.http
+__mocks_
+jest.config.js
+Dockerfile
+
+# projeye göndermek istemediğim dosyaların anabaşlıklarını yazıyorum.
+# ismini yazdıklarım uygulamanın çalışması için gerekli değil. benim uygulamayı test etmek için kullandığım araçlar.
+# normalde node_modules uygulamanın içinden de silmem gerekiyor ama başlangıcta kalabilir. buradan ignore ile
+# şimdilik göndermiyorum.

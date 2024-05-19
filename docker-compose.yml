@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  frontend:
+    build: frontend
+    ports:
+      - 7070:7070
+  backend:
+    build: backend
+    environment:
+      MONGODB_CONNECTION_STRING: "mongodb://localhost/taxi-booking"
+    ports:
+      - 3000:3000
+  mongodb:
+    image: mongo:4.2
+    ports:
+      - 47017:27017
+    volumes:
+      - ./data:/data/db

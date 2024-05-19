@@ -2,7 +2,9 @@ const mongoose = require("mongoose")
 
 const PassengerSchema = new mongoose.Schema({
     name: { type: String, required: true, minlength: 2},
+    surname: { type: String, required: true, minlength: 2},
     location: String,
+    date: Date,
     bookings: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Booking",

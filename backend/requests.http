@@ -1,7 +1,7 @@
 POST http://localhost:3000/passengers HTTP/1.1
 content-type: application/json
 
-{"name":"yüksel", "location": "bielefeld"}
+{"name":"Nilgün","surname":"Türkmen", "location": "Bielefeld"}
 
 ###
 
@@ -12,26 +12,26 @@ DELETE http://localhost:3000/passengers/5e9de11c0b0ac272d7866b1b HTTP/1.1
 
 ###
 
-PATCH http://localhost:3000/passengers/5e9de4cd9f11eb7402e56941 HTTP/1.1
+PATCH http://localhost:3000/passengers/663ca7b2c2f70d4de7f214c3 HTTP/1.1
 content-type: application/json
 
-{"name": "new name4"}
+{"name": "Yüksel", "location": "bielefeld"}
 
 ###
 
 POST http://localhost:3000/drivers HTTP/1.1
 content-type: application/json
 
-{"name":"Sude", "age": 19, "location": "Bielefeld"}
+{"name":"Sude","surname":"Aksahin", "age": 18, "location": "Sennestadt"}
 
 ###
 DELETE http://localhost:3000/drivers/5ea70bf063b0877147bd3e6b HTTP/1.1
 
 ###
-POST http://localhost:3000/passengers/5ea70b28bbf7cb710503f2d4/bookings HTTP/1.1
+POST http://localhost:3000/passengers/6640c5fb12738270beac7dbb/bookings HTTP/1.1
 content-type: application/json
 
-{"driverId": "5ea724416e3b607ac41df63a", "origin": "Kabatas", "destination": "Pendik"}
+{"driverId": "664056e52d0d4e49d132b3d0", "origin": "Bielefeld", "destination": "Köln"}
 
 ###
 

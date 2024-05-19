@@ -9,6 +9,8 @@
   "author": "M.Yüksel Koyunoglu",
   "license": "ISC",
   "dependencies": {
-    "colors": "^1.4.0"
+    "axios": "^1.6.8",
+    "colors": "^1.4.0",
+    "vue-router": "^4.3.2"
   }
 }

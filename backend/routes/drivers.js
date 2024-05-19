@@ -4,8 +4,8 @@ const router = require("express").Router()
 
 router.get("/" , async ( req, res) => {//söförleri yükle
     const drivers = await driverService.load()
-    // res.send(await driverService.load())
-    res.render("drivers", { drivers })
+    res.send(await driverService.load())
+    // res.render("drivers", { drivers })
 })
 
 router.post("/", async (req, res) => {//söförleri gönder
@@ -30,7 +30,8 @@ router.get("/:driverId", async (req, res) => {
     const driver = await driverService.find(req.params.driverId)
 
     if(!driver) return res.status(404).send("Cannot find driver")
-    res.render("driver", { driver})
+    // res.render("driver", { driver})
+    res.send(driver)
 })
 
 router.patch("/:driverId", async (req, res) => {

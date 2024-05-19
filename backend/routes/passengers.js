@@ -3,10 +3,10 @@ const { passengerService, bookingService } = require("../services")
 const router = require("express").Router()
 
 router.get("/", async (req, res) => {
-    const passengers = await passengerService.load()
+    // const passengers = await passengerService.load() pug ile kullan
 
-    res.render("passengers", { passengers })// pug ile kullan
-    // res.send(await passengerService.load()) // mongodb ile kullan
+    // res.render("passengers", { passengers })// pug ile kullan
+    res.send(await passengerService.load()) // mongodb ile kullan
 })
 
 router.post("/", async (req, res, next) => {
@@ -28,8 +28,8 @@ router.get("/:passengerId/", async (req, res) => {
     const passenger = await passengerService.find(req.params.passengerId)
 
     if(!passenger) return res.status(404).send("Cannot find passenger")
-    // res.send(passenger)// mongodb ile kullan
-    res.render("passenger", {passenger})//pug ile kullan
+    res.send(passenger)// mongodb ile kullan
+    // res.render("passenger", {passenger})//pug ile kullan
 })
 
 router.post("/:passengerId/bookings", async (req, res) => {
