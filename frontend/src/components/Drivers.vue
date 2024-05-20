@@ -7,19 +7,32 @@ import { mapActions } from 'pinia';
         data() {
             return {
                 drivers: [],
+                passengers:[],
                 name: "",
                 surname:"",
                 age:"",
-                location:""
+                location:"",
+                allBookings: []
             }
         },
         async mounted() {
             await this.updateDrivers();
+            await this.updatePassengers();
+        },
+        computed: {
+            totalBookings() {
+                // Tüm yolcuların rezervasyon sayısını topla
+                return this.passengers.reduce((total, passenger) => total + passenger.bookings.length, 0);
+            }
         },
         methods: {
-            ...mapActions(useCounterStore, ["fetchDrivers","addDriver"]),
+            ...mapActions(useCounterStore, ["fetchDrivers","fetchPassengers","addDriver"]),
             async updateDrivers() {
                 this.drivers = await this.fetchDrivers()
+            },
+            async updatePassengers() {
+                this.passengers = await this.fetchPassengers()
+                this.allBookings = this.passengers.reduce((bookings, passenger) => bookings.concat(passenger.bookings), [] )
             },
             async addNewDriver() {
                 await this.addDriver({
@@ -41,7 +54,11 @@ import { mapActions } from 'pinia';
 
 <template>
     <div class="w3-container">
+        <p>Total number of bookings: {{ totalBookings }}</p>
+
         <h2>Drivers Page</h2>
+
+
         <p>There are {{ drivers.length }} drivers.</p>
         <ol>
             <li v-for="driver in drivers">

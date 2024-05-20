@@ -5,6 +5,7 @@
       <router-link to="/" class="w3-button w3-green w3-hover-red">Home</router-link>
       <router-link to="/passengers" class="w3-button w3-green w3-hover-red">Passengers</router-link>
       <router-link to="/drivers" class="w3-button w3-green w3-hover-red">Drivers</router-link>
+      <!-- <router-link to="/bookings" class="w3-button w3-green w3-hover-red">Bookings</router-link> -->
     </div>
     <div class="w3-container">
       <router-view></router-view>

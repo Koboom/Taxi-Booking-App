@@ -14,6 +14,10 @@ export const useCounterStore = defineStore('counter', () => {
     const request = await axios.get("/passengers")
     return request.data
   }
+  async function fetchBookings() {
+    const request = await axios.get("/bookings")
+    return request.data
+  }
   async function fetchPassenger(passengerId) {
     const request = await axios.get(`/passengers/${passengerId}`)
     return request.data
@@ -52,6 +56,7 @@ export const useCounterStore = defineStore('counter', () => {
     fetchDriver,
     bookDriver,
     addPassenger,
-    addDriver
+    addDriver,
+    fetchBookings
   }
 })

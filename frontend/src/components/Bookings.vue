@@ -1,32 +1,29 @@
 <script>
-import { useCounterStore } from '@/stores/counter';
-import { mapActions } from 'pinia';
+    import { useCounterStore } from '@/stores/counter';
+    import { mapActions } from 'pinia';
 
     export default {
-        name: "Passenger",
+        name: "Bookings",
         data() {
             return {
-                passenger: {},
-                drivers: [],
                 bookings: []
             }
         },
         async mounted() {
-            await this.updatePassenger()
-            this.drivers = await this.fetchDrivers()
-
+            await this.updateBookings();
         },
         methods: {
-            ...mapActions(useCounterStore, ["fetchPassenger","fetchDrivers","bookDriver","fetchBookings"]),
-            async updatePassenger() {
-                this.passenger = await this.fetchPassenger(this.$route.params.passengerId)
+            ...mapActions(useCounterStore, ["fetchBookings"]),
+            async updateBookings() {
+                await this.fetchBookings();
             }
         }
     }
 </script>
+
 <template>
     <div class="w3-container">
-        <h3>Bookings Detail</h3>
-        {{ passenger.name }}
+        <h2>Bookings Page</h2>
+        <p>{{ bookings.length }}</p>
     </div>
 </template>

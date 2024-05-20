@@ -3,9 +3,10 @@ const { bookingService } = require("../services")
 const router = require("express").Router()
 
 router.get("/", async (req, res) => {
-    const bookings = await bookingService.load()
+    // const bookings = await bookingService.load()
 
-    res.render("bookings", { bookings })
+    // res.render("bookings", { bookings })
+    res.send(await bookingService.load())
 })
 
 router.get("/seach", async (req, res) => {

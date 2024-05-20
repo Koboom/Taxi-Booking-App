@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const connectionString = process.env.MONGODB_CONNECTION_STRING || 'mongodb://localhost:27017/taxi-booking'
 
-// mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true }) kullanımdan kalktı.
+// mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
 mongoose.connect(connectionString)
 
 var db = mongoose.connection
