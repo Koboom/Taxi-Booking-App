@@ -4,7 +4,6 @@ import Home from "../views/Home.vue"
 import Drivers from "../components/Drivers.vue"
 import Passenger from "../components/Passenger.vue"
 import Driver from "../components/Driver.vue"
-import Bookings from "../components/Bookings.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,11 +38,6 @@ const router = createRouter({
       name: "Booking",
       component: Passengers
     },
-    {
-      path: "/bookings",
-      name: "Bookings",
-      component: Bookings
-    }
   ]
 })
 

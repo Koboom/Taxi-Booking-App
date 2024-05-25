@@ -1,8 +1,10 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
-import axios from "axios"
+import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:3000/'
+// VITE_BASE_URL'i kullanarak baseURL'yi ayarlayın
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL || 'http://localhost:3000/'
+
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
@@ -44,7 +46,6 @@ export const useCounterStore = defineStore('counter', () => {
     const request = await axios.post("/drivers", driverData)
     return request.data
   }
-
 
   return {
     count,

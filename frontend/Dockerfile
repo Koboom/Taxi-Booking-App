@@ -12,9 +12,11 @@ RUN npm install
 
 COPY . .
 
+RUN npm run build
+
 #install npm dependencies
 # run application
 
-EXPOSE 7070
+EXPOSE 8080
 
 CMD [ "npm", "run", "dev" ]

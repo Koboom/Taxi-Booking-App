@@ -7,7 +7,7 @@
                 <!-- Her bir rezervasyonu göster -->
                 <p class="w3-border w3-padding ">
                     {{ booking.passenger.name }} {{ booking.passenger.surname }} -
-                    <span class="w3-green">{{ booking.passenger.location  }}-{{ booking.destination }} with {{ booking.driver.name }}</span>
+                    <span class="">{{ booking.passenger.location  }}-{{ booking.destination }} with {{ booking.driver.name }}</span>
                 </p>
             </li>
         </ul>
