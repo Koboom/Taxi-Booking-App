@@ -1,7 +1,7 @@
 POST https://backend-fimqwb2tta-ez.a.run.app/passengers HTTP/1.1
 content-type: application/json
 
-{"name":"Sükran","surname":"Koyunoglu", "location": "Nazilli"}
+{"name":"Nilgün","surname":"Türkmen", "location": "Bielefeld"}
 
 ###
 
@@ -22,7 +22,7 @@ content-type: application/json
 POST https://backend-fimqwb2tta-ez.a.run.app/drivers HTTP/1.1
 content-type: application/json
 
-{"name":"Yasin","surname":"Koyunoglu", "age": 18, "location": "Sennestadt"}
+{"name":"Lara","surname":"Arıer", "age": 18, "location": "Ankara"}
 
 ###
 DELETE http://localhost:3000/drivers/5ea70bf063b0877147bd3e6b HTTP/1.1

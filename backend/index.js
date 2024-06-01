@@ -6,7 +6,6 @@ const indexRouter = require("./routes/index")
 const passengersRouter = require("./routes/passengers")
 const driversRouter = require("./routes/drivers")
 
-
 require("./mongo-connection")
 
 const app = express()
