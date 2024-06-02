@@ -31,3 +31,4 @@ coverage
 
 # Environment variables
 .env
+counter.js
