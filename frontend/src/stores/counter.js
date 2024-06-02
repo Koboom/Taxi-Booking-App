@@ -2,9 +2,10 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const BASE_URL = 'https://backend-fimqwb2tta-ez.a.run.app/';
-// axios.defaults.baseURL = process.env.VUE_APP_API_URL || 'http://localhost:3000'
+// console.log('API URL:', process.env.VUE_APP_API_URL);
 
+// Ayarlamayı burada yapıyoruz
+axios.defaults.baseURL = import.meta.env.VITE_APP_API_URL;
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
@@ -16,7 +17,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function fetchPassengers() {
     try {
-      const response = await axios.get(`${BASE_URL}/passengers`);
+      const response = await axios.get('/passengers');
       return response.data;
     } catch (error) {
       console.error('Error fetching passengers:', error);
@@ -26,7 +27,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function fetchPassenger(passengerId) {
     try {
-      const response = await axios.get(`${BASE_URL}/passengers/${passengerId}`);
+      const response = await axios.get(`/passengers/${passengerId}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching passenger ${passengerId}:`, error);
@@ -36,7 +37,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function deletePassenger(passengerId) {
     try {
-      const response = await axios.delete(`${BASE_URL}/passengers/${passengerId}`)
+      const response = await axios.delete(`/passengers/${passengerId}`)
       return response.data
     } catch (error) {
       console.error(`Error deleting passenger ${passengerId}:`, error);
@@ -46,7 +47,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function deleteDriver(driverId) {
     try {
-      const response = await axios.delete(`${BASE_URL}/drivers/${driverId}`)
+      const response = await axios.delete(`/drivers/${driverId}`)
       return response.data
     } catch (error) {
       console.error(`Error deleting passenger ${driverId}:`, error);
@@ -56,7 +57,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function fetchDrivers() {
     try {
-      const response = await axios.get(`${BASE_URL}/drivers`);
+      const response = await axios.get('/drivers');
       return response.data;
     } catch (error) {
       console.error('Error fetching drivers:', error);
@@ -66,7 +67,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function fetchDriver(driverId) {
     try {
-      const response = await axios.get(`${BASE_URL}/drivers/${driverId}`);
+      const response = await axios.get(`/drivers/${driverId}`);
       return response.data;
     } catch (error) {
       console.error(`Error fetching driver ${driverId}:`, error);
@@ -76,7 +77,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function fetchBookings() {
     try {
-      const response = await axios.get(`${BASE_URL}/bookings`);
+      const response = await axios.get('/bookings');
       return response.data;
     } catch (error) {
       console.error('Error fetching bookings:', error);
@@ -86,7 +87,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function bookDriver({ passengerId, driverId, origin, destination }) {
     try {
-      const response = await axios.post(`${BASE_URL}/passengers/${passengerId}/bookings`, {
+      const response = await axios.post(`/passengers/${passengerId}/bookings`, {
         driverId,
         origin,
         destination
@@ -100,7 +101,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function addPassenger(passengerData) {
     try {
-      const response = await axios.post(`${BASE_URL}/passengers`, passengerData);
+      const response = await axios.post('/passengers', passengerData);
       return response.data;
     } catch (error) {
       console.error('Error adding passenger:', error);
@@ -110,7 +111,7 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function addDriver(driverData) {
     try {
-      const response = await axios.post(`${BASE_URL}/drivers`, driverData);
+      const response = await axios.post('/drivers', driverData);
       return response.data;
     } catch (error) {
       console.error('Error adding driver:', error);
