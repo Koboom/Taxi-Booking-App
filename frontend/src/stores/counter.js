@@ -2,10 +2,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-// console.log('API URL:', process.env.VUE_APP_API_URL);
-
 // Ayarlamayı burada yapıyoruz
-axios.defaults.baseURL = import.meta.env.VITE_APP_API_URL;
+axios.defaults.baseURL = import.meta.env.VITE_APP_API_URL || 'http://localhost:3000';
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
