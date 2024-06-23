@@ -21,6 +21,26 @@
             background-image: url("../src/components/icons/cafe-g1dbc48649_1920.jpg");
             min-height: 75%;
         }
+        .icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +63,13 @@
     </div>
     <!-- end Links -->
     <!-- Header with image -->
+    <div class="icon-bar">
+        <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+        <br>
+        <a href="/work" class="twitter w3-green w3-hover-red w3-round-xlarge"><i class="fa fa-globe w3-xlarge"></i></a>
+      </div>
     <header class="w3-display-container w3-grayscale-min bgimg" id="home">
+
         <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
             <span class="w3-tag">Öffnungszeiten: Montag-Freitag: 06:30-18:00 Samstag:06.30-13:00</span>
         </div>
@@ -57,7 +83,7 @@
     <!-- End Header with image -->
 
     <!-- Add a background color -->
-    <div class="w3-sand w3-grayscale w3-large">
+    <div class="w3-sand w3-grayscale w3-large content">
 
         <!-- About container -->
         <div class="w3-container" id="about">

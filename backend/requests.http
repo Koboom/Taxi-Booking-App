@@ -4,6 +4,21 @@ content-type: application/json
 {"name":"Nilgün","surname":"Türkmen", "location": "Bielefeld"}
 
 ###
+POST http://localhost:3000/users/register HTTP/1.1
+content-type: application/json
+
+{"username":"Yüksel","password":"Mehmet"}
+
+###
+GET http://localhost:3000/users/66673185390224c2ed4d2388 HTTP/1.1
+
+###
+POST http://localhost:3000/users/login HTTP/1.1
+Content-Type: application/json
+
+{"username":"Yüksel","password":"Mehmet"}
+
+###
 
 GET http://localhost:3000/passengers/5ea70b28bbf7cb710503f2d4 HTTP/1.1
 
@@ -22,7 +37,7 @@ content-type: application/json
 POST https://backend-fimqwb2tta-ez.a.run.app/drivers HTTP/1.1
 content-type: application/json
 
-{"name":"Lara","surname":"Arıer", "age": 18, "location": "Ankara"}
+{"name":"Mehmet","surname":"Yüksel", "age": 18, "location": "Ankara"}
 
 ###
 DELETE http://localhost:3000/drivers/5ea70bf063b0877147bd3e6b HTTP/1.1

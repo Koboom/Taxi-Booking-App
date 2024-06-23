@@ -12,10 +12,34 @@ body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size: 16px;}
 img {margin-bottom: -8px;}
 .mySlides {display: none;}
+.icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
 </style>
 </head>
 <body class="w3-content w3-black" style="max-width:1500px;">
-
+  <div class="icon-bar">
+    <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+    <br>
+    <a href="/work" class="twitter w3-green w3-hover-red w3-round-xlarge"><i class="fa fa-globe w3-xlarge"></i></a>
+  </div>
 <!-- Header with Slideshow -->
 <header class="w3-display-container w3-center">
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>

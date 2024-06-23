@@ -13,6 +13,7 @@ import SoftwareMainView from "../components/SoftwareView.vue"
 import TaxiBookingsView from '@/components/TaxiBookingsView.vue'
 import TaxiAllBookingsView from '@/components/TaxiAllBookingsView.vue'
 import PassengerNew from "../components/PassengerNew.vue"
+import CafeView from "../components/CafeView.vue"
 
 
 const router = createRouter({

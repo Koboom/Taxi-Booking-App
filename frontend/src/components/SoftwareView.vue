@@ -7,7 +7,7 @@
         <div class="w3-row-padding" style="margin-top: 64px;">
             <div class="w3-col l6 m6 w3-center w3-card w3-hover-opacity"><br>
                 <h3 class="">Taxi Bookings App</h3>
-                <a href="/taxiBookingsHauptSeite" target="_blank" class="w3-btn w3-round">
+                <a href="/taxiBookingsHauptSeite" class="w3-btn w3-round">
                     <img src="../components/icons/Screenshot 2024-01-17 184916.png" alt="" style="width: 100%;" height="200px">
                 </a> <br><br>
             </div>

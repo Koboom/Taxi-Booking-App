@@ -10,7 +10,8 @@
       <p class="w3-panel w3-leftbar w3-padding-large w3-border-green w3-round w3-pale-red w3-round-large">
         Anzahl der Bestellungen: {{ totalBookings }}
       </p>
-      <h2>Drivers Page</h2>
+      <div class="w3-container w3-half">
+        <h2>Drivers Page</h2>
       <p>There are {{ drivers.length }} drivers.</p>
       <ol class="w3-ul w3-border w3-border-green w3-round-large w3-pale-green w3-round">
         <li v-for="driver in drivers" :key="driver._id">
@@ -18,28 +19,30 @@
           <button @click="deleteFetchDriver(driver._id)"> Delete</button>
         </li>
       </ol>
-    </div>
-    <h2>Neue Fahrer</h2>
-    <div class="w3-container">
+      </div>
+      <div class="w3-container w3-half w3-border w3-border-green w3-round-large w3-pale-green w3-round">
+      <h2>Neue Fahrer</h2>
       <p>
-        <label for="name">Name:</label>
+        <label for="name"></label>
         <input class="w3-input" type="text" id="name" v-model="name" placeholder="Name eingeben..." required>
       </p>
       <p>
-        <label for="surname">Surname:</label>
+        <label for="surname"></label>
         <input class="w3-input" type="text" id="surname" v-model="surname" placeholder="Nachname eingeben..." required>
       </p>
       <p>
-        <label for="age">Age:</label>
+        <label for="age"></label>
         <input class="w3-input" type="number" id="age" v-model="age" placeholder="Enter age..." required>
       </p>
       <p>
-        <label for="location">Location:</label>
+        <label for="location"></label>
         <input class="w3-input" type="text" id="location" v-model="location" placeholder="Ort eingeben..." required>
       </p>
       <div v-if="error" class="error">{{ error }}</div>
       <button @click="addNewDriver">Fahrer Hinzufügen</button>
     </div>
+    </div>
+
   </template>
 
   <script>

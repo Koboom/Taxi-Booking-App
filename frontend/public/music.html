@@ -10,6 +10,26 @@
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+.icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
 </style>
 </head>
 <body>
@@ -44,7 +64,11 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
-
+  <div class="icon-bar">
+    <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+    <br>
+    <a href="/work" class="twitter w3-green w3-hover-red "><i class="fa fa-globe w3-xlarge"></i></a>
+  </div>
   <!-- Automatic Slideshow Images -->
   <div class="mySlides w3-display-container w3-center">
     <img src="../src/components/icons/guitar-756326_1920.jpg" style="width:100%">

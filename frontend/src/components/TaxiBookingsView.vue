@@ -8,7 +8,7 @@
         <span class="w3-bar-item w3-right">
         Logo
       </span>
-      <a href="/signup" class="w3-bar-item w3-button" style="margin-left: 10px;">Üye Ol</a>
+      <!-- <a href="/signup" class="w3-bar-item w3-button" style="margin-left: 10px;">Üye Ol</a> -->
       </div>
 
 
@@ -76,7 +76,8 @@
            </a>
           </div>
           <div class="w3-quarter">
-            <a href="/passengernew" style="text-decoration: none;">
+            <!-- <a href="/passengernew" style="text-decoration: none;"> -->
+            <a href="#" style="text-decoration: none;">
               <div class="w3-container w3-teal w3-padding-16">
               <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
               <div class="w3-right">

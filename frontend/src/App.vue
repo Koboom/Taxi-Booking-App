@@ -14,13 +14,13 @@ export default {
 </script>
 
 <template>
-    <div class="w3-top">
-      <div class="w3-bar w3-white w3-card" id="myNavbar">
-        <router-link to="/" class="w3-button w3-bar-item w3-wide w3-opacity w3-hover-opacity-off">Yüksel Software Development</router-link>
-        <router-link to="/contact" class="w3-button w3-bar-item w3-right w3-hide-small"><i class="fa fa-user"></i> Contact</router-link>
-        <router-link to="/cv" class="w3-button w3-bar-item w3-right w3-hide-small"><i class="fa fa-user"></i> CV</router-link>
-        <router-link to="/software" class="w3-button w3-bar-item w3-right w3-hide-small">Work(Software)</router-link>
-        <router-link to="/work" class="w3-button w3-bar-item w3-right w3-hide-small">Work(Template)</router-link>
+    <div class="">
+      <div class="w3-bar w3-card-4" id="myNavbar">
+        <router-link to="/" class="w3-button w3-bar-item w3-wide w3-opacity w3-hover-opacity-off"> Yüksel Software Development</router-link>
+        <router-link to="/contact" class="w3-button w3-bar-item w3-right w3-hide-small "><i class="fa fa-user"></i> Contact</router-link>
+        <router-link to="/cv" class="w3-button w3-bar-item w3-right w3-hide-small "><i class="fa fa-user"></i> CV</router-link>
+        <router-link to="/software" class="w3-button w3-bar-item w3-right w3-hide-small ">Work(Software)</router-link>
+        <router-link to="/work" class="w3-button w3-bar-item w3-right w3-hide-small ">Work(Template)</router-link>
         <router-link to="/" class="w3-button w3-green w3-bar-item w3-hover-red w3-right w3-hide-medium w3-hide-large" @click="dison = !dison"><i class="fa fa-bars"></i></router-link>
         <!-- <router-link to="/passengers" class="w3-button w3-green w3-hover-red">Passengers</router-link> -->
         <!-- <router-link to="/drivers" class="w3-button w3-green w3-hover-red">Drivers</router-link> -->
@@ -35,7 +35,7 @@ export default {
       <router-link to="/work" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme">Work(Template)</router-link>
       <router-link to="/contact" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme">Contact</router-link>
     </nav>
-    <div class="w3-container w3-margin-top w3-padding-large">
+    <div class="">
       <router-view></router-view>
     </div>
 </template>

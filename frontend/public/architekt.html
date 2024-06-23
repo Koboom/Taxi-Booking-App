@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar (sit on top) -->
@@ -23,9 +45,14 @@
             </div>
         </div>
     </div>
-
+    <div class="icon-bar">
+        <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+        <br>
+        <a href="/work" class="twitter w3-green w3-hover-red w3-round-xlarge"><i class="fa fa-globe w3-xlarge"></i></a>
+      </div>
     <!-- Header -->
     <header class="w3-display-container w3-content w3-wide">
+
         <img src="../src/components/icons/designer-bei-der-arbeit-im-buero.jpg" alt="designer"
         style="width: 100%;max-height: 600px;">
         <div class="w3-display-middle w3-margin-top w3-center">

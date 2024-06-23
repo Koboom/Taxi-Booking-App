@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body, html {height: 100%}
 body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
@@ -16,6 +17,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
   background-image: url("../src/components/icons/pizza-2766487_1920.jpg");
   min-height: 90%;
 }
+.icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
 </style>
 </head>
 <body>
@@ -44,6 +65,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Amatic SC", sans-serif}
 
 <!-- Menu Container -->
 <div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="icon-bar">
+    <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+    <br>
+    <a href="/work" class="twitter w3-green w3-hover-red "><i class="fa fa-globe w3-xlarge"></i></a>
+  </div>
   <div class="w3-content">
 
     <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">THE MENU</h1>
