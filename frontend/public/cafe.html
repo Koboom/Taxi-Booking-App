@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cafe Template</title>
+    <style>
+        body,html {
+            height: 100%;
+        }
+        .bgimg {
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url("../src/components/icons/cafe-g1dbc48649_1920.jpg");
+            min-height: 75%;
+        }
+        .icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+            <div class="w3-col s3">
+                <a href="#home" class="w3-button w3-block w3-black">HOME</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
+            </div>
+        </div>
+    </div>
+    <!-- end Links -->
+    <!-- Header with image -->
+    <div class="icon-bar">
+        <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+        <br>
+        <a href="/work" class="twitter w3-green w3-hover-red w3-round-xlarge"><i class="fa fa-globe w3-xlarge"></i></a>
+      </div>
+    <header class="w3-display-container w3-grayscale-min bgimg" id="home">
+
+        <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+            <span class="w3-tag">Öffnungszeiten: Montag-Freitag: 06:30-18:00 Samstag:06.30-13:00</span>
+        </div>
+        <div class="w3-display-middle w3-center">
+            <span class="w3-text-white" style="font-size: 90px;">the <br>Cafe</span>
+        </div>
+        <div class="w3-display-bottomright w3-center w3-padding-large">
+            <span class="w3-text-white">Hauptstrasse , 33647</span>
+        </div>
+    </header>
+    <!-- End Header with image -->
+
+    <!-- Add a background color -->
+    <div class="w3-sand w3-grayscale w3-large content">
+
+        <!-- About container -->
+        <div class="w3-container" id="about">
+            <div class="w3-content" style="max-width: 700px;">
+                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">About the Cafe</span></h5>
+                <p style="text-align: justify; text-indent: 5%;">
+                    Je länger man sich mit dem Kaffeehaus beschäftigt, desto weniger weiß man, wo man heute noch eines finden kann.
+                 Denn der wortwörtliche, kleinste gemeinsame Nenner, Haus mit Kaffee, grenzt das Kaffeehaus wohl
+                  kaum vom modernen Café oder Restaurant ab. Vielmehr spielen hier Größe und vor allem Geselligkeit
+                  eine entscheidende Rolle, was nicht unbedingt Gesellschaft am eigenen Tisch bedeuten muss.
+                </p>
+                <p style="text-align: justify; text-indent: 5%;">
+                    Im Kaffeehaus lässt es sich dank der Platzfülle ohne Zeit- oder Umsatzdruck ganz wunderbar verweilen,
+                    sei es beim Plauschen, Zeitunglesen, verlagerten Homeoffice oder Leute-Gucken, was ja die Grundlage für
+                    Helge Schneiders "Eduscho-Studium" gewesen sein soll. Folgende Auswahl wird sich dem Prototypen Kaffeehaus
+                    mal mehr mal weniger annähern, sie alle laden aber gerade an kalten Tagen zum Aufwärmen hinter
+                    beschlagener Fensterscheibe ein, natürlich bei einer dampfenden Tasse Kaffee.
+                </p>
+                <div class="w3-leftbar w3-panel w3-xlarge w3-yellow w3-padding" style="text-indent: 5%;">
+                    <p><i>Cafés gibt es überall in der Stadt, manche haben eine besondere Atmosphäre !!!</i>
+                        <br>Chef, "Coffeist und Owner: Dennis Römer"
+                    </p>
+                </div>
+                <img src="../src/components/icons/people-g9373c7aa2_1920.jpg" alt="Kaffeehaus" style="width: 100%; max-width: 1000px;"
+                class="w3-margin-top">
+                <p><strong>Öffnungszeiten: </strong> Montag-Freitag: 06:30-18:00 Samstag:06.30-13:00</p>
+                <p><strong>Hauptstrasse </strong> 33647 Bielefeld</p>
+            </div>
+        </div>
+        <!-- End About container -->
+        <!-- Menu Container -->
+        <div class="w3-container" id="menu">
+            <div class="w3-content" style="max-width: 700px;">
+                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
+
+                <div class="w3-row w3-center w3-card w3-padding">
+                    <a href="javascript:void(0)" onclick="openMenu(event, 'Eat')" id="myLink">
+                        <div class="w3-col s6 tablink">Essen</div>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openMenu(event,'Drinks')">
+                        <div class="w3-col s6 tablink">Trinken</div>
+                    </a>
+                </div>
+
+                <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+                    <h5>Bread Basket</h5>
+                    <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
+
+                    <h5>Honey Almond Granola with Fruits</h5>
+                    <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+
+                    <h5>Belgian Waffle</h5>
+                    <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+
+                    <h5>Scrambled eggs</h5>
+                    <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
+
+                    <h5>Blueberry Pancakes</h5>
+                    <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
+                </div>
+                <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
+                    <h5>Coffee</h5>
+                    <p class="w3-text-grey">Regular coffee 2.50</p><br>
+
+                    <h5>Chocolato</h5>
+                    <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
+
+                    <h5>Corretto</h5>
+                    <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
+
+                    <h5>Iced tea</h5>
+                    <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
+
+                    <h5>Soda</h5>
+                    <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
+                  </div>
+                  <img src="../src/components/icons/coffeehouse2.jpg" alt="Kaffeehaus" style="width: 100%; max-width: 1000px;
+                  margin-top: 32px;">
+            </div>
+        </div>
+        <!-- End Menu Container -->
+        <!-- Contact -->
+        <div class="w3-container" id="where" style="padding-bottom: 32px;">
+            <div class="w3-content" style="max-width: 700px;">
+                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WO FINDEN SIE UNS</span></h5>
+                <p>Finden Sie uns...</p>
+                <img src="../src/components/icons/map.jpg" alt="map" style="width: 100%;">
+                <p style="text-align: justify;"><span class="w3-tag">!!!</span>
+                    Wir bieten Full-Service-Catering für jede Veranstaltung, ob groß oder klein. Wir verstehen
+                    Ihre Bedürfnisse und werden das Essen so zubereiten, dass es die größten Kriterien von allen erfüllt,
+                    sowohl Aussehen als auch Geschmack.
+                </p>
+                <p style="width: 100%;">
+                    <strong>Reserve: </strong>einen Tisch, fragen Sie nach dem heutigen Special oder senden
+                    Sie uns einfach eine Nachricht:
+                </p>
+
+                <form action="/action_page.php">
+                    <p><input type="text" class="w3-input w3-padding-16 w3-border" placeholder="Name" required name="Name"></p>
+                    <p><input type="number" class="w3-input w3-padding-16 w3-border" placeholder="Wie viele Leute" required name="People"></p>
+                    <p><input type="datetime-local" class="w3-input w3-padding-16 w3-border" placeholder="Date and time"
+                        required name="date" value="2023-05-11T20:00"></p>
+                    <p><button class="w3-button w3-black" type="submit">Send Message</button></p>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact -->
+    </div>
+    <!-- End page content -->
+    <!-- footer -->
+    <footer class="w3-center w3-dark-grey w3-padding-48 w3-large">
+        <p>Entwickelt von
+            <a href="https://yukselsoftware.de/" target="_blank" style="text-decoration: none;" class="w3-tag w3-hover-red">Yüksel
+            </a>
+        </p>
+    </footer>
+    <!-- end footer -->
+
+    <script>
+        function openMenu(evt,menuName) {
+            var i,x,tablinks;
+
+            x=document.getElementsByClassName("menu");
+            for(i=0;i<x.length;i++) {
+                x[i].style.display="none";
+            }
+            tablinks=document.getElementsByClassName("tablink");
+            for(i=0;i<tablinks.length;i++) {
+                tablinks[i].className=tablinks[i].className.replace(" w3-dark-grey","");
+            }
+            document.getElementById(menuName).style.display="block";
+            evt.currentTarget.firstElementChild.className +=" w3-dark-grey";
+        }
+
+        document.getElementById("myLink").click();
+
+    </script>
+</body>
+</html>

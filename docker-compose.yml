@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  frontend:
+    image: uberbooking-frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+
+  backend:
+    image: uberbooking-backend
+    environment:
+      MONGODB_CONNECTION_STRING: "mongodb://mongodb:27017/taxi-booking"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:4.2
+    ports:
+      - "47017:27017"
+    volumes:
+      - ./data:/data/db

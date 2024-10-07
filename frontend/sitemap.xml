@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Anasayfa -->
+  <url>
+    <loc>https://yukselsoftware.de/</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- CV Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/cv</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- İş Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/work</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- İletişim Formu -->
+  <url>
+    <loc>https://yukselsoftware.de/contact</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Yolcular Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/passengers</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Yolcu Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/passengers/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Şoförler Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/drivers</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Şoför Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/drivers/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Impressum Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/impressum</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Veri Koruma Beyanı Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/datenschutzerklaerung</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Yazılım Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/software</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Taksi Rezervasyonları Ana Sayfa -->
+  <url>
+    <loc>https://yukselsoftware.de/taxiBookingsHauptSeite</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tüm Taksi Rezervasyonları -->
+  <url>
+    <loc>https://yukselsoftware.de/taxiAllbookings</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Restoran Siparişleri -->
+  <url>
+    <loc>https://yukselsoftware.de/restaurantOrders</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Restoran Dashboard -->
+  <url>
+    <loc>https://yukselsoftware.de/restaurantDashboard</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Kasa Dashboard -->
+  <url>
+    <loc>https://yukselsoftware.de/kasseDashboard</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Müşteriler Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/customers</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Müşteri Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/customers/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Garsonlar Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/waiters</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Garson Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/waiters/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Ürünler Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/items</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Ürün Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/items/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Masalar Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/tables</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Masa Detay Sayfası (Dinamik) -->
+  <url>
+    <loc>https://yukselsoftware.de/tables/1</loc> <!-- Örnek ID, dinamik olarak değiştirilmelidir -->
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Sipariş Rezervasyonları -->
+  <url>
+    <loc>https://yukselsoftware.de/orderBooking</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Yeni Yolcu Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/passengerNew</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Kayıt Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/signup</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Giriş Sayfası -->
+  <url>
+    <loc>https://yukselsoftware.de/login</loc>
+    <lastmod>2024-08-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

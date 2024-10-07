@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catering Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+.icon-bar {
+          position: fixed;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+
+        .icon-bar a {
+          display: block;
+          text-align: center;
+          padding: 16px;
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 20px;
+        }
+        .content {
+          margin-left: 75px;
+          font-size: 30px;
+        }
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Gourmet au Catering</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Menu</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+
+  <img class="w3-image" src="../src/components/icons/hamburger.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Le Catering</h1>
+  </div>
+  <div class="icon-bar">
+    <a href="/" class="facebook w3-green w3-hover-red w3-round-xlarge "><i class="fa fa-home w3-xlarge"></i></a>
+    <br>
+    <a href="/work" class="twitter w3-green w3-hover-red w3-round-xlarge"><i class="fa fa-globe w3-xlarge"></i></a>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="../src/components/icons/tablesetting2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">Über Catering</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">Der Begriff „Catering“ ist ein englisches Wort, das sich vom Verb "to cater", jemanden bewirten oder verpflegen, ableitet. Die gebräuchliche Definition von Catering ist die professionelle Dienstleistung, die die Bereitstellung von Speisen und Getränken zu bestimmten Anlässen an einem beliebigen Ort umfasst. Zusätzlich zur reinen Zubereitung und Lieferung kann Catering auch bedeuten, dass Personal und Equipment sowie weitere Serviceleistungen zur Verfügung gestellt werden. Catering ist Teil der mobilen Gastronomie.</p>
+      <p class="w3-large w3-text-grey w3-hide-medium">The term “catering” is an English word that is derived from the verb “to cater”, to entertain or feed someone. The common definition of catering is the professional service that involves the provision of food and beverages on specific occasions at any location. In addition to pure preparation and delivery, catering can also mean that staff and equipment as well as other services are made available. Catering is part of mobile gastronomy.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Unser Menü</h1><br>
+      <h4>Bread Basket</h4>
+      <p class="w3-text-grey">Auswahl an frisch gebackenen Obstbroten und Muffins 5.50</p><br>
+
+      <h4>Honey Almond Granola with Fruits</h4>
+      <p class="w3-text-grey">Natürliches Getreide aus mit Honig geröstetem Hafer, Rosinen, Mandeln und Datteln 7.00</p><br>
+
+      <h4>Belgian Waffle</h4>
+      <p class="w3-text-grey">Teig mit Vanillegeschmack und Malzmehl 7.50</p><br>
+
+      <h4>Rührei</h4>
+      <p class="w3-text-grey">Rührei, geröstete rote Paprika und Knoblauch, dazu Frühlingszwiebeln 7.50</p><br>
+
+      <h4>Blueberry Pancakes</h4>
+      <p class="w3-text-grey">Mit Sirup, Butter und vielen Beeren 8.50</p>
+    </div>
+
+    <div class="w3-col l6 w3-padding-large">
+      <img src="../src/components/icons/tablesetting.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>Wir bieten Full-Service-Catering für jede Veranstaltung, ob groß oder klein. Wir verstehen Ihre Bedürfnisse und sorgen dafür, dass die Speisen den höchsten Kriterien von allen gerecht werden, sowohl hinsichtlich des Aussehens als auch des Geschmacks. Zögern Sie nicht, uns zu kontaktieren.</p>
+    <p class="w3-text-blue-grey w3-large"><b>Catering Service, Bielefeld, HauptStr. DE</b></p>
+    <p>Sie können uns auch telefonisch unter 00553123-2323 oder per E-Mail an Catering@Catering.com erreichen oder uns hier eine Nachricht senden:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="Wie viele Leute" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2024-01-20T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Nachricht \ Besondere Anforderungen" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">NACHRICHT SENDEN</button></p>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://yukselsoftware.de/" title="yuksel" target="_blank" class="w3-hover-text-green">Yüksel</a></p>
+</footer>
+
+</body>
+</html>
