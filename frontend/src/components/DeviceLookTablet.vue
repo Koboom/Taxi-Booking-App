@@ -16,7 +16,7 @@
   width: 1024px;
   height: 640px;
   margin: auto;
-  border: 16px black solid;
+  border: 16px rgb(33, 29, 29) solid;
   border-top-width: 60px;
   border-bottom-width: 60px;
   border-radius: 36px;

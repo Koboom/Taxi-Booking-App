@@ -3,16 +3,17 @@ services:
   frontend:
     image: uberbooking-frontend
     ports:
-      - "8080:8080"
+      - "8080:8080" # Frontend'in çalışacağı port
     depends_on:
       - backend
 
   backend:
     image: uberbooking-backend
     environment:
-      MONGODB_CONNECTION_STRING: "mongodb://mongodb:27017/taxi-booking"
+      - MONGODB_CONNECTION_STRING=mongodb://mongodb:27017/taxi-booking
+      - PORT=8080 # Backend'in çalışması gereken port
     ports:
-      - "3000:3000"
+      - "8080:8080" # Backend servisi 8080 portunda çalışacak
     depends_on:
       - mongodb
 

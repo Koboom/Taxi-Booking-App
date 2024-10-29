@@ -1,9 +1,10 @@
 <script>
 import RecaptchaForm from "@/components/RecaptchaForm.vue"
+// import RealTimeChat from "./components/RealTimeChat.vue";
 
 export default {
   components: {
-    RecaptchaForm
+    RecaptchaForm,
   },
   data() {
     return {
@@ -59,24 +60,26 @@ export default {
       <!-- Navbar (sit on top) -->
       <div class="w3-bar w3-card-4" id="myNavbar">
         <router-link to="/" class="w3-button w3-bar-item w3-wide w3-opacity w3-hover-opacity-off"> Yüksel Software Development</router-link>
-        <!-- <router-link to="/register" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Register</router-link> -->
+        <router-link to="/register" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Register</router-link>
         <!-- <router-link to="/login" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Login</router-link> -->
-        <!-- <span class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium"><i class="fa fa-user"></i></span> -->
         <router-link to="/contact" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium "> Contact</router-link>
         <router-link to="/cv" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium "> CV</router-link>
         <router-link to="/software" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Work(Software)</router-link>
         <router-link to="/work" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Work(Template)</router-link>
+        <router-link to="/realTimeChat" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Chat</router-link>
+        <!-- <router-link to="/adminPaneli" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium ">Admin</router-link> -->
         <!-- Sign up Button -->
         <router-link to="" class="w3-button w3-green w3-bar-item w3-hover-red w3-right w3-hide-large" @click="dison = !dison"><i class="fa fa-bars"></i></router-link>
       </div>
       <!-- Navbar on small screens/mobile (Hidden on medium and large screens) -->
-      <nav v-show="dison" style="width: 350px;" class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-text-theme w3-hide-large">
-        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-large w3-padding-16 w3-hover-red w3-theme-d4" @click="dison = !dison">Close</a>
-        <router-link to="/" @click="close"  class="w3-button w3-bar-item w3-opacity w3-theme-d3"> Home</router-link>
-        <router-link to="/cv" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme-d1">CV</router-link>
-        <router-link to="/software" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme">Work(Software)</router-link>
-        <router-link to="/work" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme">Work(Template)</router-link>
-        <router-link to="/contact" @click="close" class="w3-button w3-bar-item w3-opacity w3-theme">Contact</router-link>
+      <nav v-show="dison" style="width: 350px;" class="w3-sidebar w3-bar-block w3-card w3-animate-left  w3-hide-large">
+        <a href="#" class="w3-bar-item w3-button w3-large w3-button w3-padding-16 w3-hover-blue" @click="dison = !dison">Close</a>
+        <router-link to="/" @click="close"  class="w3-button w3-bar-item "> Home</router-link>
+        <router-link to="/cv" @click="close" class="w3-button w3-bar-item ">CV</router-link>
+        <router-link to="/software" @click="close" class="w3-button w3-bar-item ">Work(Software)</router-link>
+        <router-link to="/work" @click="close" class="w3-button w3-bar-item">Work(Template)</router-link>
+        <router-link to="/contact" @click="close" class="w3-button w3-bar-item w3-theme ">Contact</router-link>
+        <router-link to="/realTimeChat" @click="close" class="w3-button w3-bar-item">Chat</router-link>
         <!-- <router-link to="/login" @click="close"  class="w3-button w3-bar-item w3-opacity w3-theme-d3"> Login</router-link> -->
         <!-- <router-link to="/register" @click="close"  class="w3-button w3-bar-item w3-opacity w3-theme-d3"> Register</router-link> -->
       </nav>
@@ -159,7 +162,7 @@ export default {
       </div>
     </template>
 
-<style>
+<style scoped>
 /* vertical line */
 .vl {
   position: absolute;

@@ -12,6 +12,9 @@ const staffService = require("./staff-service")
 const tableService = require("./table-service")
 const waiterService = require("./waiter-service")
 const userService = require("./user-service")
+const messageService = require("./message-service")
+const chatRoomService = require("./chatroom-service")
+
 
 module.exports = {
     passengerService,
@@ -27,5 +30,7 @@ module.exports = {
     staffService,
     tableService,
     waiterService,
-    userService
+    userService,
+    messageService,
+    chatRoomService
  }

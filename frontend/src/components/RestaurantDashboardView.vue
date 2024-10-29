@@ -212,7 +212,6 @@
         </div>
 
 
-
         <!-- <p>Total Chair: {{ totalCapacity }}</p>
         <ol>
             <li v-for="table in tables">
@@ -309,3 +308,8 @@ import { mapActions } from 'pinia';
         }
     }
 </script>
+<style scoped>
+p{
+  color: white;
+}
+</style>

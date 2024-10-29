@@ -339,6 +339,15 @@ Content-Type: application/json
   "isAdmin": false
 }
 
+###
+POST https://backend-fimqwb2tta-ez.a.run.app/chatrooms HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Ali ve Veli'nin Sohbet Odası",
+  "participants": ["670bdcbf893828b18eed2fe4", "670b6c27d6e5a140e0644421"]
+}
+
 
 ###
 POST https://backend-fimqwb2tta-ez.a.run.app/users/register HTTP/1.1
@@ -346,8 +355,8 @@ Content-Type: application/json
 
 {
     "username": "deneme",
-    "email": "nykoyunoglu@gmail.com",
-    "password": "admin123",
+    "email": "nykoyunoglu2@gmail.com",
+    "password": "admin123deneme",
     "firstName": "Yüksel",
     "lastName": "Koyunoglu",
     "phone": "+9876543211",

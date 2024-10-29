@@ -203,7 +203,6 @@ import emailjs from 'emailjs-com';
                             <span class="w3-right w3-round-large w3-small">zzgl. mwst.</span></li>
                         <li><span class="w3-tooltip" style="cursor: pointer;">- Statik Website <span class="w3-text w3-tag" style="position: absolute; left:100px; bottom: 18px;">Ohne backend</span></span> <br>
                             <span class="w3-tooltip" style="cursor: pointer;">- {{ seitenZahl }} Seiten <span class="w3-text w3-tag" style="position: absolute; left:100px; bottom: 18px;">Der Verkäufer fügt die angegebene Anzahl an Seiten zu deiner Website hinzu.</span></span> <br>
-
                             <span class="w3-tooltip" style="cursor: pointer;">- Responsive Design <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Verkäufer erstellt ein reaktionsfähiges Design, das alle Geräte unterstützt</span></span><br>
                             <span class="w3-tooltip" style="cursor: pointer;">- Design Anpassung <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Freelancer passt das Farbschema und das Layout deiner Website individuell an.</span></span><br>
                             <span>- {{ lieferTage }} Tage Lieferzeit</span><br>
@@ -237,7 +236,7 @@ import emailjs from 'emailjs-com';
                                 <br>"Ich kann nicht ein halbes Projekt abschließen.Ich akzeptiere Projekte zum Starten und Beenden."
                             </p>
                         </li>
-                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClick">Bestellen</button></li>
+                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClick">Anfrage Senden</button></li>
                     </ul>
                 </div>
                 <!-- <div v-if="orderMessage" class="w3-center w3-padding-32 w3-animate-top w3-justify w3-margin-top w3-container w3-opacity-min">
@@ -287,7 +286,7 @@ import emailjs from 'emailjs-com';
                                 <br>"Ich kann nicht ein halbes Projekt abschließen.Ich akzeptiere Projekte zum Starten und Beenden."
                             </p>
                         </li>
-                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClickStandard">Bestellen</button></li>
+                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClickStandard">Anfrage Senden</button></li>
                     </ul>
                 </div>
                 <!-- <div v-if="orderMessageStandard" class="w3-center w3-padding-32 w3-animate-top w3-justify w3-margin-top w3-container w3-opacity-min">

@@ -64,7 +64,8 @@ export default {
 </script>
 
 <template>
-    <header class="w3-display-container">
+    <div>
+      <header class="w3-display-container">
       <div class="header">
     <!--Content before waves-->
         <div class="inner-header flex w3-opacity-max">
@@ -102,11 +103,14 @@ export default {
         </div>
     </header>
     <!-- Device Looking -->
-    <div class="w3-row">
+    <div class="w3-row w3-hide-small w3-hide-medium">
+      <h2 class="w3-center">Responsive</h2>
       <div class="w3-col l4 w3-hide-small w3-hide-medium">
+        <h3 class="w3-center">Mobile</h3>
         <device-look-smart></device-look-smart>
       </div>
       <div class="w3-col l8 w3-hide-small w3-hide-medium">
+        <h3 class="w3-center">Tablet/Laptop</h3>
         <device-look-tablet></device-look-tablet>
       </div>
     </div>
@@ -121,6 +125,7 @@ export default {
     <!-- Footer View -->
     <div>
         <footer-view ></footer-view>
+    </div>
     </div>
 </template>
 
@@ -307,11 +312,11 @@ export default {
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:40px;
-    min-height:40px;
+    height:20px;
+    min-height:20px;
   }
   .content {
-    height:30vh;
+    height:20vh;
   }
   h1 {
     font-size:24px;
@@ -324,8 +329,8 @@ div.drop-container {
   bottom: 0;
   left: 0;
   margin: auto;
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
 }
 
 

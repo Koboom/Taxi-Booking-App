@@ -28,6 +28,9 @@ import KasseDashboard from "../components/KasseDashboard.vue"
 import Register from '@/components/Register.vue'
 import NotFound from '@/components/NotFound.vue'
 import Login from "../components/Login.vue"
+import ExifExtractor from "../components/ExifExtractor.vue"
+import RealTimeChat from '@/components/RealTimeChat.vue'
+import AdminPaneli from '@/components/AdminPaneli.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +39,16 @@ const router = createRouter({
       path: "/",
       name: "Home",
       component: Home
+    },
+    {
+      path: "/realTimeChat",
+      name: "RealTimeChat",
+      component: RealTimeChat
+    },
+    {
+      path: "/adminPaneli",
+      name: "AdminPaneli",
+      component: AdminPaneli
     },
     {
       path: "/register",
@@ -181,6 +194,11 @@ const router = createRouter({
       path: "/passengerNew",
       name: "PassengerNew",
       component: PassengerNew
+    },
+    {
+      path: "/exifExtractor",
+      name: "ExifExtractor",
+      component: ExifExtractor
     },
     {
       path: "/:pathMatch(.*)*",

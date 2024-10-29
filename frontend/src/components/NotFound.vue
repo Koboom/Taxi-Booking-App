@@ -7,10 +7,19 @@
   </template>
 
   <script>
-  export default {
-    name: 'NotFound'
+export default {
+  name: 'NotFound',
+  metaInfo() {
+    return {
+      title: '404 Not Found - https://yukselsoftware.de/',
+      meta: [
+        { name: 'description', content: 'The page you are looking for does not exist.' }
+      ]
+    };
   }
-  </script>
+}
+</script>
+
 
   <style scoped>
   .not-found {

@@ -34,7 +34,10 @@ RUN npm install
 COPY . .
 
 # Uygulamanın dinleyeceği portu aç
-EXPOSE 3000
+EXPOSE 8080
+
+# Çevresel değişken olarak PORT=8080 ayarla
+ENV PORT=8080
 
 # Uygulamayı başlat
 CMD ["npm", "start"]
