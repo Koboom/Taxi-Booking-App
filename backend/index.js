@@ -45,7 +45,8 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 // CORS middleware
 app.use(cors({
   origin: ['https://yukselsoftware.de', 'http://localhost:8080', 'https://backend-fimqwb2tta-ez.a.run.app'], // Canlı ve geliştirme domainlerini ekleyin
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH',"OPTIONS"],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Gerekli başlıkları ekle
   credentials: true
 }));
 
@@ -53,7 +54,8 @@ app.use(express.json());
 app.use(session({
   secret: secretKey,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: { secure: process.env.NODE_ENV === 'production', sameSite: "none" }
 }));
 
 // Passport'ı başlatma ve yapılandırma

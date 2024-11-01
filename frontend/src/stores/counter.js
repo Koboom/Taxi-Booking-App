@@ -366,7 +366,12 @@ export const useCounterStore = defineStore('counter', () => {
 
   async function deleteFetchItem(itemId){
     try {
-      const response = await axios.delete(`${BASE_URL}/items/${itemId}`)
+      const response = await axios.delete(`${BASE_URL}/items/${itemId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      console.log("Dlete responce: ", response)
       return response.data
     } catch (error) {
       console.error(`Error deleting item ${itemId}:`, error);

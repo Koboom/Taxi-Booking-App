@@ -2,7 +2,7 @@ const { app, server } = require('../'); // Hem app hem de server objesini alıyo
 const logger = require('../config/logger');
 const { initializeSocket } = require('../socket-connection'); // Socket-connection.js'i dahil et
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 // Socket.IO'yu başlat
 initializeSocket(server);
