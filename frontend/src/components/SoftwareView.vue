@@ -19,6 +19,14 @@
                     <h3 class="">FotoMeta GPS Extractor</h3>
                     <img src="../components/icons/FotoGps.png" alt="" style="width: 50%; height: 200px;">
         </a>
+        <a href="/realTimeChat" class="w3-btn w3-round w3-third w3-card w3-margin-bottom">
+                    <h3 class="">Real Time Chat App (Customer)</h3>
+                    <img src="../components/icons/chat.png" alt="" style="width: 50%; height: 200px;">
+        </a>
+        <a href="/adminPaneli" class="w3-btn w3-round w3-third w3-card w3-margin-bottom">
+                    <h3 class="">Real Time Chat App (Admin)</h3>
+                    <img src="../components/icons/chatAdmin.png" alt="" style="width: 50%; height: 200px;">
+        </a>
         <!-- <a href="/restaurantOrders" class="w3-btn w3-round w3-third w3-card-4 w3-margin-bottom">
                     <h3 class="">Restaurant Orders App</h3>
                     <img src="../components/icons/restaurant.png" alt="" style="width: 50%; height: 200px;">

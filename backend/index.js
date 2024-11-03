@@ -6,6 +6,11 @@ const session = require("express-session");
 const logger = require("./config/logger");
 const passport = require("passport");
 const User = require("./models/user");
+const EisCreamTable = require("./models/eisCreamTable")
+const EisCreamProduct = require("./models/eisCreamProduct")
+const EisCreamOrder = require("./models/eisCreamOrder")
+const EisCreamReview = require("./models/eisCreamReview")
+const EisCreamWaiter = require("./models/eisCreamWaiter")
 
 const indexRouter = require("./routes/index");
 const passengersRouter = require("./routes/passengers");
