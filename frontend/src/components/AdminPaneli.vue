@@ -13,9 +13,7 @@
         <li v-for="room in chatRooms" :key="room._id" @click="selectChatRoom(room._id)">
           {{ room.name }}
         </li>
-        <li>
-          + New Room
-        </li>
+        <li> + New Room </li>
       </ul>
     </div>
 
@@ -31,8 +29,8 @@
       </div>
 
       <div class="input-container">
-        <input v-model="message" placeholder="Mesajınızı yazın" @keyup.enter="sendMessage" />
-        <button @click="sendMessage">Send</button>
+        <input v-model="message" placeholder="Message..." @keyup.enter="sendMessage" />
+        <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
       </div>
     </div>
   </div>
@@ -45,12 +43,13 @@ export default {
       chatRooms: [],            // Tüm chat odaları
       selectedRoomId: null,     // Seçilen chat odası
       selectedRoomName: '',     // Seçilen odanın adı
-      messages: [],             // Seçilen odadaki mesajlar
+      messages: [],             // Seçilen odaki mesajlar
       message: '',              // Gönderilecek mesaj
       adminId: '670bdcbf893828b18eed2fe4',  // Admin'in kullanıcı ID'si
       adminName: 'Admin',       // Admin'in ismi
       isAdmin: true,            // Admin olup olmadığını belirten bayrak
-      showSidebar: false        // Sidebar toggle durumunu kontrol eder
+      showSidebar: false,       // Sidebar toggle durumunu kontrol eder
+      sendingMessage: false     // Mesaj gönderiliyor mu?
     };
   },
   mounted() {
@@ -120,6 +119,9 @@ export default {
     // Mesaj gönder
     sendMessage() {
       if (this.message.trim() && this.selectedRoomId) {
+        this.sendingMessage = true;
+        console.log("Mesaj gönderiliyor:", this.message);
+
         this.$socket.emit(
           'sendMessage',
           {
@@ -131,6 +133,7 @@ export default {
             chatRoom: this.selectedRoomId
           },
           (response) => {
+            this.sendingMessage = false;
             if (response && response.status === 'success') {
               console.log('Mesaj başarıyla gönderildi!');
             } else {

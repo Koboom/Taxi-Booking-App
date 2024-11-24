@@ -14,8 +14,15 @@
     </div>
 
     <div class="input-container">
-      <input v-model="message" placeholder="Mesajınızı yazın..." @keyup.enter="sendMessage" ref="messageInput" />
-      <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Gönderiliyor...' : 'Gönder' }}</button>
+      <textarea
+        v-model="message"
+        placeholder="Message..."
+        @keyup.enter="sendMessage"
+        ref="messageInput"
+        @input="resizeTextarea"
+        :style="{ height: textareaHeight + 'px' }"
+      ></textarea>
+      <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
     </div>
   </div>
 </template>
@@ -30,58 +37,58 @@ export default {
       userId: 'Anonim',       // Mevcut kullanıcının ID'si
       chatRoomId: '672739d1442932e3066e9e8c', // Mevcut chat odası ID'si
       isAdmin: true,          // Admin mi?
+      textareaHeight: 40,     // Varsayılan textarea yüksekliği
     };
   },
   mounted() {
     // Yeni mesaj sesi için ses dosyası yüklüyorum
-  this.notificationSound = new Audio('/sounds/notification.mp3');
+    this.notificationSound = new Audio('/sounds/notification.mp3');
 
-// Gelen mesajları dinle
-this.$socket.on('receiveMessage', (msg) => {
-  console.log("Yeni mesaj alındı:", msg);
-  this.messages.push(msg);
-  this.playNotificationSound();
-  this.scrollToBottom(); // Her mesaj geldiğinde en alta kaydır
-});
+    // Gelen mesajları dinle
+    this.$socket.on('receiveMessage', (msg) => {
+      this.messages.push(msg);
+      this.playNotificationSound();
+      this.scrollToBottom(); // Her mesaj geldiğinde en alta kaydır
+    });
 
-// Odaya katıl
-this.$socket.emit('joinRoom', this.chatRoomId);
+    // Odaya katıl
+    this.$socket.emit('joinRoom', this.chatRoomId);
   },
   methods: {
     playNotificationSound() {
-  if (this.notificationSound) {
-    console.log("Ses çalınıyor..."); // Sesin çalındığını kontrol etmek için
-    this.notificationSound.play().catch(error => console.log("Ses çalma hatası:", error));
-  }
-},
-    // Mesaj gönderme işlemi
+      if (this.notificationSound) {
+        this.notificationSound.play().catch(error => console.log("Ses çalma hatası:", error));
+      }
+    },
+    resizeTextarea() {
+      // Mesaj alanının yüksekliğini otomatik olarak ayarlayın
+      const textarea = this.$refs.messageInput;
+      textarea.style.height = 'auto';
+      this.textareaHeight = Math.min(textarea.scrollHeight, 100); // Maksimum 100px
+    },
     async sendMessage() {
-      if (!this.message.trim()) return; // Boş mesajları engelle
-
+      if (!this.message.trim()) return;
       this.sendingMessage = true;
-      console.log("Mesaj gönderiliyor:", this.message);
 
       this.$socket.emit(
         'sendMessage',
         {
-          sender: { firstName: this.userId, isAdmin: this.isAdmin }, // Gönderici bilgisi burada ekleniyor
+          sender: { firstName: this.userId, isAdmin: this.isAdmin },
           content: this.message,
           chatRoom: this.chatRoomId,
         },
         (response) => {
           this.sendingMessage = false;
           if (response && response.status === "success") {
-            console.log("Mesaj başarıyla gönderildi!");
-            this.message = ''; // Mesaj gönderildikten sonra inputu temizle
-            this.$refs.messageInput.focus(); // Girdi alanını tekrar odakla
+            this.message = '';
+            this.textareaHeight = 40; // Gönderim sonrası textarea yüksekliğini sıfırla
+            this.$refs.messageInput.focus();
           } else {
             console.error("Mesaj gönderme hatası:", response ? response.error : 'No response');
           }
         }
       );
     },
-
-    // Mesajların olduğu container'ı en alta kaydır
     scrollToBottom() {
       const container = this.$refs.messagesContainer;
       container.scrollTop = container.scrollHeight;
@@ -102,8 +109,7 @@ this.$socket.emit('joinRoom', this.chatRoomId);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 60%;
-  max-width: 600px;
+  width: 95%;
   margin: 20px auto;
 }
 
@@ -156,16 +162,18 @@ this.$socket.emit('joinRoom', this.chatRoomId);
   gap: 10px;
 }
 
-input {
+textarea {
   flex: 1;
   padding: 12px 15px;
   border-radius: 25px;
   border: 1px solid #ccc;
   font-size: 16px;
+  resize: none;
+  overflow-y: hidden;
   transition: border-color 0.2s;
 }
 
-input:focus {
+textarea:focus {
   border-color: #4caf50;
   outline: none;
 }
@@ -188,5 +196,31 @@ button:hover {
 button:disabled {
   background-color: #a5d6a7;
   cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .chat-container {
+    padding: 15px;
+    height: 80vh;
+    border-radius: 8px;
+  }
+
+  .message {
+    max-width: 95%;
+  }
+
+  .input-container {
+    gap: 5px;
+  }
+
+  textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 </style>

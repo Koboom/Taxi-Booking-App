@@ -20,24 +20,27 @@
                 <h2></h2>
             </div>
             <div class="w3-quarter">
-                <ul>
+                <ul class="w3-ul">
                     <h3>Rechtliches: </h3>
                     <li>
-                        <a href="/impressum" style="text-decoration: none; cursor: pointer;" >impressum</a>
+                        <a class="w3-text-white" href="/impressum" style="text-decoration: none; cursor: pointer;" >impressum</a>
                     </li>
                     <li>
-                        <a href="/datenschutzerklaerung" style="text-decoration: none; cursor: pointer;">Datenschutzerklärung</a>
+                        <a class="w3-text-white" href="/datenschutzerklaerung" style="text-decoration: none; cursor: pointer;">Datenschutzerklärung</a>
                     </li><br><br>
                 </ul>
             </div>
         </div>
-        <p class="w3-center">Copyright 2024 by Yüksel Software Development. All rights Reserved. <br>
-            Durch die Nutzung von Yüksel Software Development erklären Sie sich damit einverstanden, <br>
-             unsere <br>
-             <a href="/datenschutzerklaerung">Nutzungsbedingungen,</a>
-
-               Cookies und Datenschutzrichtlinien gelesen und akzeptiert zu haben.
-        </p>
+        <div>
+            <div class="w3-center">
+                Copyright 2024 by Yüksel Software Development. All rights Reserved. <br>
+                Durch die Nutzung von Yüksel Software Development erklären Sie sich damit einverstanden, <br>
+             unsere
+             <a class="w3-text-black" href="/datenschutzerklaerung">Nutzungsbedingungen,</a>
+             Cookies und Datenschutzrichtlinien gelesen und akzeptiert zu haben.
+             Entwickelt von <a href="/" style="text-decoration: none; color: lightgreen;">Yüksel</a>
+            </div>
+        </div>
     </div>
 </template>
 

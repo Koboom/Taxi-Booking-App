@@ -31,6 +31,7 @@ import Login from "../components/Login.vue"
 import ExifExtractor from "../components/ExifExtractor.vue"
 import RealTimeChat from '@/components/RealTimeChat.vue'
 import AdminPaneli from '@/components/AdminPaneli.vue'
+import TensorView from "@/components/TensorView.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -199,6 +200,11 @@ const router = createRouter({
       path: "/exifExtractor",
       name: "ExifExtractor",
       component: ExifExtractor
+    },
+    {
+      path: "/tensor",
+      name: "TensorView",
+      component: TensorView
     },
     {
       path: "/:pathMatch(.*)*",
