@@ -1,50 +1,5 @@
-<template>
-    <div class="w3-container w3-margin-top">
-        <router-link class="w3-button w3-green w3-round-large" to="/restaurantDashboard">Home</router-link>
-    </div>
-    <div class="w3-container">
-        <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
-            Es handelt sich um eine Demoseite.
-        </p> <hr>
-        <h2 class="w3-center w3-green w3-round-xxlarge w3-margin-top w3-margin-bottom w3-padding-large">
-            <span>Kasse</span><span class="w3-hide-small w3-animate-opacity"> Details</span> <span class="w3-right">
-            Total <span class="w3-hide-small w3-animate-opacity"> Price:</span><span class="w3-tag w3-circle w3-green w3-margin-left">{{ totalEarnings }} €</span>
-        </span>
-        </h2>
-    </div>
-    <div class="w3-container">
-        <div class="w3-container w3-col l4 m6 s12" style="max-height: 300px; overflow: auto;">
-            <h3>Daily Earnings: </h3>
-            <ul class="w3-ul">
-                <li v-for="(earnings, date) in totalEarningsPerDay" :key="date">
-                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ date }}</span>
-                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
-                </li>
-            </ul>
-        </div>
-        <div class="w3-container w3-col l4 m6 s12">
-            <h3>Monthly Earnings: </h3>
-            <ul class="w3-ul">
-                <li v-for="(earnings, month) in totalEarningsPerMonth" :key="month">
-                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ month }}</span>
-                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
-                </li>
-            </ul>
-        </div>
-        <div class="w3-container w3-col l4 m6 s12">
-            <h3>Yearly Earnings: </h3>
-            <ul class="w3-ul">
-                <li v-for="(earnings, year) in totalEarningsPerYear" :key="year">
-                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ year }}</span>
-                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</template>
-
 <script>
-    import { useCounterStore } from '@/stores/counter';
+    import { useCounterStore } from '@/stores/state';
     import { mapActions } from 'pinia';
 
     export default {
@@ -136,3 +91,48 @@
     }
 
 </script>
+
+<template>
+    <div class="w3-container w3-margin-top">
+        <router-link class="w3-button w3-green w3-round-large" to="/restaurantDashboard">Home</router-link>
+    </div>
+    <div class="w3-container">
+        <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
+            Es handelt sich um eine Demoseite.
+        </p> <hr>
+        <h2 class="w3-center w3-green w3-round-xxlarge w3-margin-top w3-margin-bottom w3-padding-large">
+            <span>Kasse</span><span class="w3-hide-small w3-animate-opacity"> Details</span> <span class="w3-right">
+            Total <span class="w3-hide-small w3-animate-opacity"> Price:</span><span class="w3-tag w3-circle w3-green w3-margin-left">{{ totalEarnings }} €</span>
+        </span>
+        </h2>
+    </div>
+    <div class="w3-container">
+        <div class="w3-container w3-col l4 m6 s12" style="max-height: 300px; overflow: auto;">
+            <h3>Daily Earnings: </h3>
+            <ul class="w3-ul">
+                <li v-for="(earnings, date) in totalEarningsPerDay" :key="date">
+                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ date }}</span>
+                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
+                </li>
+            </ul>
+        </div>
+        <div class="w3-container w3-col l4 m6 s12">
+            <h3>Monthly Earnings: </h3>
+            <ul class="w3-ul">
+                <li v-for="(earnings, month) in totalEarningsPerMonth" :key="month">
+                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ month }}</span>
+                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
+                </li>
+            </ul>
+        </div>
+        <div class="w3-container w3-col l4 m6 s12">
+            <h3>Yearly Earnings: </h3>
+            <ul class="w3-ul">
+                <li v-for="(earnings, year) in totalEarningsPerYear" :key="year">
+                    <span class="w3-light-grey w3-padding w3-round-large w3-margin-right"> {{ year }}</span>
+                    <span class="w3-badge w3-green w3-round-large w3-margin-left">{{ earnings }} €</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

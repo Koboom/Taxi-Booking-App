@@ -6,7 +6,7 @@
       <!-- Diğer form alanları -->
       <input type="submit" value="Submit">
     </form>
-  </template>
+</template>
 
   <script>
   export default {

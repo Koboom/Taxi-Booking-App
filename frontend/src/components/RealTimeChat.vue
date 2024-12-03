@@ -1,32 +1,3 @@
-<template>
-  <div class="chat-container">
-    <div class="messages" ref="messagesContainer">
-      <div
-        v-for="msg in messages"
-        :key="msg._id"
-        :class="['message', msg.sender.firstName === userId ? 'user-message' : 'other-message']"
-      >
-        <div class="message-content">
-          <strong>{{ msg.sender.firstName || "Anonim" }}:</strong>
-          <div class="message-text">{{ msg.content }}</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="input-container">
-      <textarea
-        v-model="message"
-        placeholder="Message..."
-        @keyup.enter="sendMessage"
-        ref="messageInput"
-        @input="resizeTextarea"
-        :style="{ height: textareaHeight + 'px' }"
-      ></textarea>
-      <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   data() {
@@ -99,6 +70,35 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div class="chat-container">
+    <div class="messages" ref="messagesContainer">
+      <div
+        v-for="msg in messages"
+        :key="msg._id"
+        :class="['message', msg.sender.firstName === userId ? 'user-message' : 'other-message']"
+      >
+        <div class="message-content">
+          <strong>{{ msg.sender.firstName || "Anonim" }}:</strong>
+          <div class="message-text">{{ msg.content }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <textarea
+        v-model="message"
+        placeholder="Message..."
+        @keyup.enter="sendMessage"
+        ref="messageInput"
+        @input="resizeTextarea"
+        :style="{ height: textareaHeight + 'px' }"
+      ></textarea>
+      <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .chat-container {

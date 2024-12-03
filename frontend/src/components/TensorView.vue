@@ -1,29 +1,3 @@
-<template>
-  <div>
-    <h1>Yapay Zeka Chatbot</h1>
-    <div class="chat-container">
-      <div class="messages">
-        <div
-          v-for="(message, index) in messages"
-          :key="index"
-          :class="{ user: message.user, bot: !message.user }"
-        >
-          {{ message.text }}
-        </div>
-      </div>
-      <div class="input-container">
-        <input
-          type="text"
-          v-model="userInput"
-          @keydown.enter="sendMessage"
-          placeholder="Sorunuzu yazın..."
-        />
-        <button @click="sendMessage">Gönder</button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   data() {
@@ -67,6 +41,32 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div>
+    <h1>Yapay Zeka Chatbot</h1>
+    <div class="chat-container">
+      <div class="messages">
+        <div
+          v-for="(message, index) in messages"
+          :key="index"
+          :class="{ user: message.user, bot: !message.user }"
+        >
+          {{ message.text }}
+        </div>
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          v-model="userInput"
+          @keydown.enter="sendMessage"
+          placeholder="Sorunuzu yazın..."
+        />
+        <button @click="sendMessage">Gönder</button>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style>
 

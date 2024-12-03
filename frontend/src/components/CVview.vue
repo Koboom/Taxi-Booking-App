@@ -1,6 +1,4 @@
-<script>
-
-</script>
+<script></script>
 
 <template>
     <div class="w3-container w3-light-grey" style="margin-top: 64px;">

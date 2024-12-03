@@ -1,3 +1,149 @@
+<script>
+import { useCounterStore } from '@/stores/state';
+import { mapActions } from 'pinia';
+
+export default {
+  data() {
+    return {
+      waiters: [],
+      waiter: {
+        name: "",
+        age: null,
+        experience: 0,
+        available: true,
+        section: "",
+        workingHours: {
+          start: "",
+          end: ""
+        },
+        skills: [],
+        education: {
+          degree: "",
+          school: ""
+        },
+        certifications: [],
+        performance: {
+          satisfactionScore: 0,
+          orderSpeed: ""
+        },
+        employmentStatus: "",
+        startDate: "",
+        tips: {
+          totalTips: 0,
+          distributionMethod: ""
+        }
+      },
+      searchQuery: ''
+    };
+  },
+  computed: {
+    filteredWaiters() {
+      // Arama sorgusunu küçük harfe dönüştür ve waiters listesini filtrele
+      const filter = this.searchQuery.toLowerCase();
+      return this.waiters.filter(waiter =>
+        waiter.name.toLowerCase().includes(filter) ||
+        waiter.employmentStatus.toLowerCase().includes(filter)
+      );
+    }
+  },
+  async mounted() {
+    await this.updateWaiters();
+  },
+  methods: {
+    ...mapActions(useCounterStore, ["fetchWaiters", "addWaiter","deleteFetchWaiter"]),
+    async updateWaiters() {
+      try {
+        this.waiters = await this.fetchWaiters();
+      } catch (error) {
+        console.log(error);
+        alert("An error occurred while fetching waiters. Please try again.");
+      }
+    },
+    addSkill() {
+      if (this.newSkill) {
+        this.waiter.skills.push(this.newSkill);
+        this.newSkill = "";
+      }
+    },
+    removeSkill(index) {
+      this.waiter.skills.splice(index, 1);
+    },
+    addCertification() {
+      if (this.newCertification) {
+        this.waiter.certifications.push(this.newCertification);
+        this.newCertification = "";
+      }
+    },
+    removeCertification(index) {
+      this.waiter.certifications.splice(index, 1);
+    },
+    async submitWaiterForm() {
+      try {
+        await this.addWaiter(this.waiter);
+        alert("Waiter added successfully");
+        this.waiters.push({...this.waiter}); // New waiter is added to the list
+        // Reset the form after submission
+        this.updateWaiters()
+        this.resetWaiterForm();
+      } catch (error) {
+        console.log("Error adding waiter: ", error);
+        alert("An error occurred while adding the waiter. Please try again.");
+      }
+    },
+    async deleteWaiter(waiterId) {
+      await this.deleteFetchWaiter(waiterId)
+      await this.updateWaiters();
+      alert("Waiter deleted successfully");
+    },
+    resetWaiterForm() {
+      this.waiter = {
+        name: "",
+        age: null,
+        experience: 0,
+        available: true,
+        section: "",
+        workingHours: {
+          start: "",
+          end: ""
+        },
+        skills: [],
+        education: {
+          degree: "",
+          school: ""
+        },
+        certifications: [],
+        performance: {
+          satisfactionScore: 0,
+          orderSpeed: ""
+        },
+        employmentStatus: "",
+        startDate: "",
+        tips: {
+          totalTips: 0,
+          distributionMethod: ""
+        }
+      };
+      this.newSkill = "";
+      this.newCertification = "";
+    },
+    statusClass(status) {
+            switch (status) {
+                case 'Active':
+                    return 'bg-active';
+                case 'On Leave':
+                    return 'bg-on-leave';
+                case 'Vacation':
+                    return 'bg-vacation';
+                case 'Sick':
+                    return 'bg-sick';
+                default:
+                    return '';
+            }
+      }
+  }
+};
+</script>
+
 <template>
   <div class="w3-container w3-margin-top">
     <router-link class="w3-button w3-green w3-round-large" to="/restaurantDashboard">Home</router-link>
@@ -163,159 +309,11 @@
         <p>
           <button type="submit" class="w3-button w3-green w3-round-large">Submit</button>
         </p>
-
       </form>
-
     </div>
 
   </div>
 </template>
-
-<script>
-import { useCounterStore } from '@/stores/counter';
-import { mapActions } from 'pinia';
-
-export default {
-  data() {
-    return {
-      waiters: [],
-      waiter: {
-        name: "",
-        age: null,
-        experience: 0,
-        available: true,
-        section: "",
-        workingHours: {
-          start: "",
-          end: ""
-        },
-        skills: [],
-        education: {
-          degree: "",
-          school: ""
-        },
-        certifications: [],
-        performance: {
-          satisfactionScore: 0,
-          orderSpeed: ""
-        },
-        employmentStatus: "",
-        startDate: "",
-        tips: {
-          totalTips: 0,
-          distributionMethod: ""
-        }
-      },
-      searchQuery: ''
-    };
-  },
-  computed: {
-    filteredWaiters() {
-      // Arama sorgusunu küçük harfe dönüştür ve waiters listesini filtrele
-      const filter = this.searchQuery.toLowerCase();
-      return this.waiters.filter(waiter =>
-        waiter.name.toLowerCase().includes(filter) ||
-        waiter.employmentStatus.toLowerCase().includes(filter)
-      );
-    }
-  },
-  async mounted() {
-    await this.updateWaiters();
-  },
-  methods: {
-    ...mapActions(useCounterStore, ["fetchWaiters", "addWaiter","deleteFetchWaiter"]),
-    async updateWaiters() {
-      try {
-        this.waiters = await this.fetchWaiters();
-      } catch (error) {
-        console.log(error);
-        alert("An error occurred while fetching waiters. Please try again.");
-      }
-    },
-    addSkill() {
-      if (this.newSkill) {
-        this.waiter.skills.push(this.newSkill);
-        this.newSkill = "";
-      }
-    },
-    removeSkill(index) {
-      this.waiter.skills.splice(index, 1);
-    },
-    addCertification() {
-      if (this.newCertification) {
-        this.waiter.certifications.push(this.newCertification);
-        this.newCertification = "";
-      }
-    },
-    removeCertification(index) {
-      this.waiter.certifications.splice(index, 1);
-    },
-    async submitWaiterForm() {
-      try {
-        await this.addWaiter(this.waiter);
-        alert("Waiter added successfully");
-        this.waiters.push({...this.waiter}); // New waiter is added to the list
-        // Reset the form after submission
-        this.updateWaiters()
-        this.resetWaiterForm();
-      } catch (error) {
-        console.log("Error adding waiter: ", error);
-        alert("An error occurred while adding the waiter. Please try again.");
-      }
-    },
-    async deleteWaiter(waiterId) {
-      await this.deleteFetchWaiter(waiterId)
-      await this.updateWaiters();
-      alert("Waiter deleted successfully");
-    },
-    resetWaiterForm() {
-      this.waiter = {
-        name: "",
-        age: null,
-        experience: 0,
-        available: true,
-        section: "",
-        workingHours: {
-          start: "",
-          end: ""
-        },
-        skills: [],
-        education: {
-          degree: "",
-          school: ""
-        },
-        certifications: [],
-        performance: {
-          satisfactionScore: 0,
-          orderSpeed: ""
-        },
-        employmentStatus: "",
-        startDate: "",
-        tips: {
-          totalTips: 0,
-          distributionMethod: ""
-        }
-      };
-      this.newSkill = "";
-      this.newCertification = "";
-    },
-    statusClass(status) {
-            switch (status) {
-                case 'Active':
-                    return 'bg-active';
-                case 'On Leave':
-                    return 'bg-on-leave';
-                case 'Vacation':
-                    return 'bg-vacation';
-                case 'Sick':
-                    return 'bg-sick';
-                default:
-                    return '';
-            }
-      }
-  }
-};
-</script>
 
 <style>
 .bg-active {

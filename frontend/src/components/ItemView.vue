@@ -1,3 +1,30 @@
+<script>
+import { useCounterStore } from '@/stores/state';
+import { mapActions } from 'pinia';
+
+    export default {
+        data() {
+            return {
+                item: {}
+            }
+        },
+        async mounted() {
+            await this.updateAndFetchItem()
+        },
+        methods: {
+            ...mapActions(useCounterStore, ["fetchItem","updateItem"]),
+            async updateAndFetchItem() {
+                try {
+                    this.item = await this.fetchItem(this.$route.params.itemId)
+
+                } catch (e) {
+                    console.error("Error fetching item", e)
+                }
+            }
+        }
+    }
+</script>
+
 <template>
     <div class="w3-container w3-margin-top">
         <router-link class="w3-button w3-green w3-round-large" to="/restaurantDashboard">Home</router-link>
@@ -241,30 +268,3 @@
         </table>
     </div>
 </template>
-
-<script>
-import { useCounterStore } from '@/stores/counter';
-import { mapActions } from 'pinia';
-
-    export default {
-        data() {
-            return {
-                item: {}
-            }
-        },
-        async mounted() {
-            await this.updateAndFetchItem()
-        },
-        methods: {
-            ...mapActions(useCounterStore, ["fetchItem","updateItem"]),
-            async updateAndFetchItem() {
-                try {
-                    this.item = await this.fetchItem(this.$route.params.itemId)
-
-                } catch (e) {
-                    console.error("Error fetching item", e)
-                }
-            }
-        }
-    }
-</script>

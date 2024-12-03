@@ -1,13 +1,4 @@
-<template>
-    <div>
-      <h2>Example Component</h2>
-      <p>Click the button to get string from DB:</p>
-      <button @click="processData">Get Data</button>
-      <p v-if="output">Output: {{ output }}</p>
-    </div>
-  </template>
-
-  <script>
+<script>
   export default {
     data() {
       return {
@@ -30,7 +21,16 @@
       }
     }
   };
-  </script>
+</script>
+
+<template>
+  <div>
+    <h2>Example Component</h2>
+    <p>Click the button to get string from DB:</p>
+    <button @click="processData">Get Data</button>
+    <p v-if="output">Output: {{ output }}</p>
+  </div>
+</template>
 
   <style scoped>
   /* h1 {

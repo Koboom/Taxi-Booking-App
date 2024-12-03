@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { useCounterStore } from '@/stores/counter';
+import { useCounterStore } from '@/stores/state';
 import { mapActions } from 'pinia';
 
 export default {

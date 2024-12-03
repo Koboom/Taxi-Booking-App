@@ -1,41 +1,3 @@
-<template>
-  <div class="admin-container">
-    <!-- Menü simgesi, yalnızca küçük ekranlarda görünür -->
-    <div class="menu-icon" @click="toggleSidebar">☰</div>
-
-    <!-- Kaplama katmanı, yalnızca sidebar açıkken görünür -->
-    <div v-if="showSidebar" class="overlay" @click="toggleSidebar"></div>
-
-    <!-- Sidebar, küçük ekranlarda toggle ile açılıp kapanır -->
-    <div class="sidebar" :class="{ 'sidebar-active': showSidebar }">
-      <h2>Chat Rooms</h2>
-      <ul>
-        <li v-for="room in chatRooms" :key="room._id" @click="selectChatRoom(room._id)">
-          {{ room.name }}
-        </li>
-        <li> + New Room </li>
-      </ul>
-    </div>
-
-    <div v-if="selectedRoomId" class="chat-container">
-      <h2>Room: {{ selectedRoomName }}</h2>
-      <div class="messages" ref="messagesContainer">
-        <div v-for="msg in messages" :key="msg._id" :class="['message', msg.sender.firstName === adminName ? 'admin-message' : 'other-message']">
-          <div class="message-content">
-            <strong>{{ msg.sender.firstName }} {{ msg.sender.lastName }}:</strong>
-            <div class="message-text">{{ msg.content }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="input-container">
-        <input v-model="message" placeholder="Message..." @keyup.enter="sendMessage" />
-        <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 export default {
   data() {
@@ -158,6 +120,44 @@ export default {
   }
 };
 </script>
+
+<template>
+  <div class="admin-container">
+    <!-- Menü simgesi, yalnızca küçük ekranlarda görünür -->
+    <div class="menu-icon" @click="toggleSidebar">☰</div>
+
+    <!-- Kaplama katmanı, yalnızca sidebar açıkken görünür -->
+    <div v-if="showSidebar" class="overlay" @click="toggleSidebar"></div>
+
+    <!-- Sidebar, küçük ekranlarda toggle ile açılıp kapanır -->
+    <div class="sidebar" :class="{ 'sidebar-active': showSidebar }">
+      <h2>Chat Rooms</h2>
+      <ul>
+        <li v-for="room in chatRooms" :key="room._id" @click="selectChatRoom(room._id)">
+          {{ room.name }}
+        </li>
+        <li> + New Room </li>
+      </ul>
+    </div>
+
+    <div v-if="selectedRoomId" class="chat-container">
+      <h2>Room: {{ selectedRoomName }}</h2>
+      <div class="messages" ref="messagesContainer">
+        <div v-for="msg in messages" :key="msg._id" :class="['message', msg.sender.firstName === adminName ? 'admin-message' : 'other-message']">
+          <div class="message-content">
+            <strong>{{ msg.sender.firstName }} {{ msg.sender.lastName }}:</strong>
+            <div class="message-text">{{ msg.content }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input v-model="message" placeholder="Message..." @keyup.enter="sendMessage" />
+        <button @click="sendMessage" :disabled="sendingMessage">{{ sendingMessage ? 'Sending...' : 'Send' }}</button>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .admin-container {

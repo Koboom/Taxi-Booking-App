@@ -1,3 +1,58 @@
+<script>
+import { useCounterStore } from '@/stores/state';
+import { mapActions } from 'pinia';
+
+export default {
+    name: "TableView",
+    data() {
+        return {
+            table: {}, // Seçilen tablo bilgileri
+            tables: [] // Tüm tabloların listesi
+        }
+    },
+    async mounted() {
+        await this.loadTable(); // loadTable metodunu kullanarak tabloyu yükler
+    },
+    methods: {
+        ...mapActions(useCounterStore, ["fetchTable", "fetchTables", "updateTable"]),
+        async loadTable() {
+            try {
+                // fetchTable ile tek tabloyu getir ve table değişkenine ata
+                this.table = await this.fetchTable(this.$route.params.tableId);
+                // fetchTables ile tüm tabloları getir ve tables değişkenine ata
+                this.tables = await this.fetchTables();
+            } catch (error) {
+                console.log("Error fetching table:", error);
+            }
+        },
+        async submitTableUpdateForm() {
+            try{
+                await this.updateTable(this.table._id, this.table)
+                alert("Table updated successfully")
+            } catch (error) {
+                console.log("Error updating table:", error);
+                alert("Error updating table")
+            }
+        },
+
+        statusClass(status) {
+            switch (status) {
+                case 'Available':
+                    return 'bg-available';
+                case 'Occupied':
+                    return 'bg-occupied';
+                case 'Reserved':
+                    return 'bg-reserved';
+                case 'Cleaning':
+                    return 'bg-cleaning';
+                default:
+                    return '';
+            }
+        },
+    }
+}
+</script>
+
 <template>
     <!-- Geri Dönüş Bağlantısı -->
     <div class="w3-container w3-margin-top">
@@ -96,60 +151,3 @@
         </div>
     </div>
 </template>
-
-<script>
-import { useCounterStore } from '@/stores/counter';
-import { mapActions } from 'pinia';
-
-export default {
-    name: "TableView",
-    data() {
-        return {
-            table: {}, // Seçilen tablo bilgileri
-            tables: [] // Tüm tabloların listesi
-        }
-    },
-    async mounted() {
-        await this.loadTable(); // loadTable metodunu kullanarak tabloyu yükler
-    },
-    methods: {
-        ...mapActions(useCounterStore, ["fetchTable", "fetchTables", "updateTable"]),
-        async loadTable() {
-            try {
-                // fetchTable ile tek tabloyu getir ve table değişkenine ata
-                this.table = await this.fetchTable(this.$route.params.tableId);
-                // fetchTables ile tüm tabloları getir ve tables değişkenine ata
-                this.tables = await this.fetchTables();
-            } catch (error) {
-                console.log("Error fetching table:", error);
-            }
-        },
-        async submitTableUpdateForm() {
-            try{
-                await this.updateTable(this.table._id, this.table)
-                alert("Table updated successfully")
-            } catch (error) {
-                console.log("Error updating table:", error);
-                alert("Error updating table")
-            }
-        },
-
-        statusClass(status) {
-            switch (status) {
-                case 'Available':
-                    return 'bg-available';
-                case 'Occupied':
-                    return 'bg-occupied';
-                case 'Reserved':
-                    return 'bg-reserved';
-                case 'Cleaning':
-                    return 'bg-cleaning';
-                default:
-                    return '';
-            }
-        },
-    }
-}
-</script>
-
-

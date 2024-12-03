@@ -1,12 +1,4 @@
-<template>
-    <div class="not-found">
-      <h1 class="not-found-title">404</h1>
-      <p class="not-found-message">Leider wurde die von Ihnen gesuchte Seite nicht gefunden.</p>
-      <router-link to="/" class="home-link">Zurück zur Startseite</router-link>
-    </div>
-  </template>
-
-  <script>
+<script>
 export default {
   name: 'NotFound',
   metaInfo() {
@@ -19,6 +11,14 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div class="not-found">
+    <h1 class="not-found-title">404</h1>
+    <p class="not-found-message">Leider wurde die von Ihnen gesuchte Seite nicht gefunden.</p>
+    <router-link to="/" class="home-link">Zurück zur Startseite</router-link>
+  </div>
+</template>
 
 
   <style scoped>

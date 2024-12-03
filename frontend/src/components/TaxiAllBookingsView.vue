@@ -1,33 +1,5 @@
-<template>
-    <div class="w3-container">
-        <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
-            Es handelt sich um eine Demoseite. Sie können Ihren Namen hinzufügen, auf Ihren Namen klicken und
-            einen Fahrer engagieren, der Sie zum gewünschten Punkt bringt. Sie können Ihren Namen löschen, wenn Sie möchten.
-        </p>
-        <hr>
-        <div>
-            <router-link class="w3-button w3-green w3-round-large" to="/taxiBookingsHauptSeite">Home</router-link>
-        </div>
-
-        <p class="w3-panel w3-leftbar w3-padding-large w3-border-green w3-round w3-pale-red w3-round-large">Anzahl der Bestellungen: {{ totalBookings }}</p>
-        <div class="w3-container">
-        <h3>All Bookings</h3>
-        <ul>
-            <li v-for="booking in allBookings" :key="booking._id">
-
-                <p class="w3-border w3-border-green w3-padding w3-margin-top w3-margin-bottom">
-                    {{ booking.passenger.name }} {{ booking.passenger.surname }} -
-                    <span class="">{{ booking.passenger.location  }}-{{ booking.destination }} with {{ booking.driver.name }}</span>
-                    <button @click="deleteBooking(booking._id)" class="w3-button w3-green w3-right">Delete</button>
-                </p>
-            </li>
-        </ul>
-    </div>
-    </div>
-</template>
-
 <script>
-import { useCounterStore } from '@/stores/counter';
+import { useCounterStore } from '@/stores/state';
 import { mapActions } from 'pinia';
 
 export default {
@@ -74,5 +46,33 @@ export default {
     }
 }
 </script>
+
+<template>
+    <div class="w3-container">
+        <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
+            Es handelt sich um eine Demoseite. Sie können Ihren Namen hinzufügen, auf Ihren Namen klicken und
+            einen Fahrer engagieren, der Sie zum gewünschten Punkt bringt. Sie können Ihren Namen löschen, wenn Sie möchten.
+        </p>
+        <hr>
+        <div>
+            <router-link class="w3-button w3-green w3-round-large" to="/taxiBookingsHauptSeite">Home</router-link>
+        </div>
+
+        <p class="w3-panel w3-leftbar w3-padding-large w3-border-green w3-round w3-pale-red w3-round-large">Anzahl der Bestellungen: {{ totalBookings }}</p>
+        <div class="w3-container">
+        <h3>All Bookings</h3>
+        <ul>
+            <li v-for="booking in allBookings" :key="booking._id">
+
+                <p class="w3-border w3-border-green w3-padding w3-margin-top w3-margin-bottom">
+                    {{ booking.passenger.name }} {{ booking.passenger.surname }} -
+                    <span class="">{{ booking.passenger.location  }}-{{ booking.destination }} with {{ booking.driver.name }}</span>
+                    <button @click="deleteBooking(booking._id)" class="w3-button w3-green w3-right">Delete</button>
+                </p>
+            </li>
+        </ul>
+    </div>
+    </div>
+</template>
 
 <style></style>

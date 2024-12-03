@@ -1,65 +1,3 @@
-<template>
-  <div class="w3-container w3-card-4 w3-light-grey w3-round-large w3-margin">
-    <h2 class="w3-xxlarge w3-center">FotoMeta GPS Extractor</h2>
-    <h2 class="w3-center w3-text-deep-orange">EXIF and GPS Information</h2>
-    <p class="w3-text-grey w3-center">Upload a photo to view EXIF and GPS data:</p>
-    <img src="../components/icons/FotoGps.png" alt="App Icon" class="app-logo" />
-
-    <div class="w3-center">
-      <input class="w3-button w3-blue w3-round-large" type="file" @change="getExifData" />
-    </div>
-
-    <!-- Bilgilendirme yazısı -->
-    <div class="w3-container w3-margin-top w3-padding-16">
-      EXIF (Exchangeable Image File) is a standard format in digital photography that embeds additional information into JPEG images. This data includes important details like shutter speed, ISO value, date, time, white balance, flash usage, and resolution. Some images may also store GPS information, revealing the exact location where the photo was taken.
-      On <span class="w3-text-deep-orange">yukselsoftware.de</span>, you can easily upload and explore these hidden details from your favorite photos. Whether you're a photography enthusiast or a professional, this online tool offers a quick and intuitive way to view the metadata behind your images.
-      <p class="w3-text-grey w3-center">Upload a JPEG, PNG, or TIFF photo to view EXIF and GPS data. Large files may take a few seconds to load.</p>
-    </div>
-
-    <!-- EXIF Verileri -->
-    <div v-if="exifData" class="w3-container w3-light-grey w3-margin-top w3-padding-16 w3-card w3-animate-opacity w3-half">
-      <h3 class="w3-text-deep-orange">EXIF Data:</h3>
-      <p v-if="exifData.formattedDateTime"><strong>Date Time Original:</strong> {{ exifData.formattedDateTime }}</p>
-      <p v-if="exifData.ExifVersion"><strong>Exif Version:</strong> {{ exifData.ExifVersion }}</p>
-      <p v-if="exifData.Software"><strong>Software:</strong> {{ exifData.Software }}</p>
-      <p v-if="exifData.Make"><strong>Make:</strong> {{ exifData.Make }}</p>
-      <p v-if="exifData.Model"><strong>Model:</strong> {{ exifData.Model }}</p>
-      <p v-if="exifData.ExposureTime"><strong>Exposure Time:</strong> {{ exifData.ExposureTime }} seconds</p>
-      <p v-if="exifData.FNumber"><strong>F Number:</strong> {{ exifData.FNumber }}</p>
-      <p v-if="exifData.ExposureProgram"><strong>Exposure Program:</strong> {{ exifData.ExposureProgram }}</p>
-      <p v-if="exifData.ImageWidth"><strong>Image Width:</strong> {{ exifData.ImageWidth }} px</p>
-      <p v-if="exifData.ImageHeight"><strong>Image Height:</strong> {{ exifData.ImageHeight }} px</p>
-      <p v-if="exifData.BitsPerSample && exifData.BitsPerSample.length"><strong>Bits Per Sample:</strong> {{ exifData.BitsPerSample.join(', ') }}</p>
-      <p v-if="exifData.ColorSpace"><strong>Color Space:</strong> {{ exifData.ColorSpace }}</p>
-      <p v-if="exifData.ExifImageWidth"><strong>Exif Image Width:</strong> {{ exifData.ExifImageWidth }} px</p>
-      <p v-if="exifData.ExifImageHeight"><strong>Exif Image Height:</strong> {{ exifData.ExifImageHeight }} px</p>
-      <p v-if="exifData.XResolution"><strong>X Resolution:</strong> {{ exifData.XResolution }}</p>
-      <p v-if="exifData.YResolution"><strong>Y Resolution:</strong> {{ exifData.YResolution }}</p>
-      <p v-if="exifData.ResolutionUnit"><strong>Resolution Unit:</strong> {{ exifData.ResolutionUnit }}</p>
-      <p v-if="exifData.Orientation"><strong>Orientation:</strong> {{ exifData.Orientation }}</p>
-      <p v-if="exifData.PhotometricInterpretation"><strong>Photometric Interpretation:</strong> {{ exifData.PhotometricInterpretation }}</p>
-      <p v-if="exifData.SamplesPerPixel"><strong>Samples Per Pixel:</strong> {{ exifData.SamplesPerPixel }}</p>
-
-      <!-- Yeni eklenen veriler -->
-      <p v-if="exifData.BitDepth"><strong>Bit Depth:</strong> {{ exifData.BitDepth }}</p>
-      <p v-if="exifData.ColorType"><strong>Color Type:</strong> {{ exifData.ColorType }}</p>
-      <p v-if="exifData.Compression"><strong>Compression:</strong> {{ exifData.Compression }}</p>
-      <p v-if="exifData.Filter"><strong>Filter:</strong> {{ exifData.Filter }}</p>
-      <p v-if="exifData.Interlace"><strong>Interlace:</strong> {{ exifData.Interlace }}</p>
-
-      <!-- GPS Bilgileri -->
-      <p v-if="exifData.GPSLatitude"><strong>GPS Latitude:</strong> {{ exifData.GPSLatitude.join(', ') }} {{ exifData.GPSLatitudeRef }}</p>
-      <p v-if="exifData.GPSLongitude"><strong>GPS Longitude:</strong> {{ exifData.GPSLongitude.join(', ') }} {{ exifData.GPSLongitudeRef }}</p>
-    </div>
-
-    <!-- Harita -->
-    <div v-if="exifData && exifData.GPSLatitude && exifData.GPSLongitude" class="w3-half w3-container w3-card-4 w3-margin-top w3-padding-16 w3-animate-opacity">
-      <h3 class="w3-text-white">Map:</h3>
-      <div id="map" style="height: 400px;"></div>
-    </div>
-  </div>
-</template>
-
 <script>
 import exifr from 'exifr';
 
@@ -174,6 +112,68 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div class="w3-container w3-card-4 w3-light-grey w3-round-large w3-margin">
+    <h2 class="w3-xxlarge w3-center">FotoMeta GPS Extractor</h2>
+    <h2 class="w3-center w3-text-deep-orange">EXIF and GPS Information</h2>
+    <p class="w3-text-grey w3-center">Upload a photo to view EXIF and GPS data:</p>
+    <img src="../components/icons/FotoGps.png" alt="App Icon" class="app-logo" />
+
+    <div class="w3-center">
+      <input class="w3-button w3-blue w3-round-large" type="file" @change="getExifData" />
+    </div>
+
+    <!-- Bilgilendirme yazısı -->
+    <div class="w3-container w3-margin-top w3-padding-16">
+      EXIF (Exchangeable Image File) is a standard format in digital photography that embeds additional information into JPEG images. This data includes important details like shutter speed, ISO value, date, time, white balance, flash usage, and resolution. Some images may also store GPS information, revealing the exact location where the photo was taken.
+      On <span class="w3-text-deep-orange">yukselsoftware.de</span>, you can easily upload and explore these hidden details from your favorite photos. Whether you're a photography enthusiast or a professional, this online tool offers a quick and intuitive way to view the metadata behind your images.
+      <p class="w3-text-grey w3-center">Upload a JPEG, PNG, or TIFF photo to view EXIF and GPS data. Large files may take a few seconds to load.</p>
+    </div>
+
+    <!-- EXIF Verileri -->
+    <div v-if="exifData" class="w3-container w3-light-grey w3-margin-top w3-padding-16 w3-card w3-animate-opacity w3-half">
+      <h3 class="w3-text-deep-orange">EXIF Data:</h3>
+      <p v-if="exifData.formattedDateTime"><strong>Date Time Original:</strong> {{ exifData.formattedDateTime }}</p>
+      <p v-if="exifData.ExifVersion"><strong>Exif Version:</strong> {{ exifData.ExifVersion }}</p>
+      <p v-if="exifData.Software"><strong>Software:</strong> {{ exifData.Software }}</p>
+      <p v-if="exifData.Make"><strong>Make:</strong> {{ exifData.Make }}</p>
+      <p v-if="exifData.Model"><strong>Model:</strong> {{ exifData.Model }}</p>
+      <p v-if="exifData.ExposureTime"><strong>Exposure Time:</strong> {{ exifData.ExposureTime }} seconds</p>
+      <p v-if="exifData.FNumber"><strong>F Number:</strong> {{ exifData.FNumber }}</p>
+      <p v-if="exifData.ExposureProgram"><strong>Exposure Program:</strong> {{ exifData.ExposureProgram }}</p>
+      <p v-if="exifData.ImageWidth"><strong>Image Width:</strong> {{ exifData.ImageWidth }} px</p>
+      <p v-if="exifData.ImageHeight"><strong>Image Height:</strong> {{ exifData.ImageHeight }} px</p>
+      <p v-if="exifData.BitsPerSample && exifData.BitsPerSample.length"><strong>Bits Per Sample:</strong> {{ exifData.BitsPerSample.join(', ') }}</p>
+      <p v-if="exifData.ColorSpace"><strong>Color Space:</strong> {{ exifData.ColorSpace }}</p>
+      <p v-if="exifData.ExifImageWidth"><strong>Exif Image Width:</strong> {{ exifData.ExifImageWidth }} px</p>
+      <p v-if="exifData.ExifImageHeight"><strong>Exif Image Height:</strong> {{ exifData.ExifImageHeight }} px</p>
+      <p v-if="exifData.XResolution"><strong>X Resolution:</strong> {{ exifData.XResolution }}</p>
+      <p v-if="exifData.YResolution"><strong>Y Resolution:</strong> {{ exifData.YResolution }}</p>
+      <p v-if="exifData.ResolutionUnit"><strong>Resolution Unit:</strong> {{ exifData.ResolutionUnit }}</p>
+      <p v-if="exifData.Orientation"><strong>Orientation:</strong> {{ exifData.Orientation }}</p>
+      <p v-if="exifData.PhotometricInterpretation"><strong>Photometric Interpretation:</strong> {{ exifData.PhotometricInterpretation }}</p>
+      <p v-if="exifData.SamplesPerPixel"><strong>Samples Per Pixel:</strong> {{ exifData.SamplesPerPixel }}</p>
+
+      <!-- Yeni eklenen veriler -->
+      <p v-if="exifData.BitDepth"><strong>Bit Depth:</strong> {{ exifData.BitDepth }}</p>
+      <p v-if="exifData.ColorType"><strong>Color Type:</strong> {{ exifData.ColorType }}</p>
+      <p v-if="exifData.Compression"><strong>Compression:</strong> {{ exifData.Compression }}</p>
+      <p v-if="exifData.Filter"><strong>Filter:</strong> {{ exifData.Filter }}</p>
+      <p v-if="exifData.Interlace"><strong>Interlace:</strong> {{ exifData.Interlace }}</p>
+
+      <!-- GPS Bilgileri -->
+      <p v-if="exifData.GPSLatitude"><strong>GPS Latitude:</strong> {{ exifData.GPSLatitude.join(', ') }} {{ exifData.GPSLatitudeRef }}</p>
+      <p v-if="exifData.GPSLongitude"><strong>GPS Longitude:</strong> {{ exifData.GPSLongitude.join(', ') }} {{ exifData.GPSLongitudeRef }}</p>
+    </div>
+
+    <!-- Harita -->
+    <div v-if="exifData && exifData.GPSLatitude && exifData.GPSLongitude" class="w3-half w3-container w3-card-4 w3-margin-top w3-padding-16 w3-animate-opacity">
+      <h3 class="w3-text-white">Map:</h3>
+      <div id="map" style="height: 400px;"></div>
+    </div>
+  </div>
+</template>
 
 <style>
 /* Sayfayı bozmadan stil eklemeleri yapılabilir */

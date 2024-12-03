@@ -1,46 +1,3 @@
-<template>
-  <form @submit.prevent="submitForm" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-    <h2>Kontakt Formular</h2>
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" v-model="formData.name" name="first" type="text" required placeholder="Vorname">
-        </div>
-    </div>
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" v-model="formData.lastname" name="last" type="text" required placeholder="Nachname">
-        </div>
-    </div>
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" v-model="formData.email" name="email" type="text" required placeholder="Email">
-        </div>
-    </div>
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
-        <div class="w3-rest">
-          <input class="w3-input w3-border" v-model="formData.phone" name="phone" type="text" required placeholder="Phone" >
-        </div>
-    </div>
-    <div class="w3-row w3-section">
-      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
-        <div class="w3-rest">
-          <textarea name="message" id="" cols="30" rows="10" class="w3-input w3-border" v-model="formData.message" required placeholder="Message">
-
-          </textarea>
-        </div>
-    </div>
-    <button type="submit" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Send</button>
-  </form>
-
-  <div class="">
-     <footer-view ></footer-view>
-  </div>
-</template>
-
 <script>
 import emailjs from 'emailjs-com';
 
@@ -83,6 +40,49 @@ export default {
   }
 };
 </script>
+
+<template>
+  <form @submit.prevent="submitForm" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
+    <h2>Kontakt Formular</h2>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border" v-model="formData.name" name="first" type="text" required placeholder="Vorname">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border" v-model="formData.lastname" name="last" type="text" required placeholder="Nachname">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border" v-model="formData.email" name="email" type="text" required placeholder="Email">
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
+        <div class="w3-rest">
+          <input class="w3-input w3-border" v-model="formData.phone" name="phone" type="text" required placeholder="Phone" >
+        </div>
+    </div>
+    <div class="w3-row w3-section">
+      <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+        <div class="w3-rest">
+          <textarea name="message" id="" cols="30" rows="10" class="w3-input w3-border" v-model="formData.message" required placeholder="Message">
+
+          </textarea>
+        </div>
+    </div>
+    <button type="submit" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Send</button>
+  </form>
+
+  <div class="">
+     <footer-view ></footer-view>
+  </div>
+</template>
 
 <style scoped>
 .contact-form {
