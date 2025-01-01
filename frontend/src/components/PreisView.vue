@@ -3,8 +3,8 @@ import emailjs from 'emailjs-com';
     export default {
         data() {
             return {
-                basicPreis: 695,  // Temel fiyat
-                standardPreis: 920, // Standart fiyat
+                basicPreis: 595,  // Temel fiyat
+                standardPreis: 820, // Standart fiyat
                 extraCost: 170,   // Ekstra maliyet
                 extraCostStandard: 170, // Ekstra maliyet (Standart)
                 extraCostSeiten: 180, // Ekstra maliyet (Seiten)

@@ -1,5 +1,5 @@
   <script>
-  import { useCounterStore } from '@/stores/state';
+  import { useCounterStore } from '@/stores/counter';
   import { mapActions } from 'pinia';
 
   export default {

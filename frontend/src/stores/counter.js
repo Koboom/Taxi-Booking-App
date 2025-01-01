@@ -2,7 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = 'https://backend-fimqwb2tta-ez.a.run.app/'
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)

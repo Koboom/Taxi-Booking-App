@@ -1,7 +1,7 @@
 <script>
 
 import { mapActions } from 'pinia';
-import { useCounterStore } from '@/stores/state';
+import { useCounterStore } from '@/stores/counter';
 
     export default {
         data() {
