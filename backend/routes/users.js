@@ -2,8 +2,8 @@ const express = require('express');
 const passport = require('passport');
 const UserService = require('../services/user-service'); // UserService'i içe aktar
 const User = require('../models/user'); // User modeli içe aktar
-const Message = require('../models/message'); // Message modeli içe aktar
-const ChatRoom = require('../models/chatRoom'); // ChatRoom modeli içe aktar
+const Message = require('../models/chat-room-socket/message'); // Message modeli içe aktar
+const ChatRoom = require('../models/chat-room-socket/chatRoom'); // ChatRoom modeli içe aktar
 const router = express.Router();
 
 // Kullanıcı kaydı

@@ -5,6 +5,7 @@ import emailjs from 'emailjs-com';
             return {
                 basicPreis: 595,  // Temel fiyat
                 standardPreis: 820, // Standart fiyat
+                dynamicPreis: 1490, // Dinamik fiyat
                 extraCost: 170,   // Ekstra maliyet
                 extraCostStandard: 170, // Ekstra maliyet (Standart)
                 extraCostSeiten: 180, // Ekstra maliyet (Seiten)
@@ -13,7 +14,7 @@ import emailjs from 'emailjs-com';
                 extraCostPlugIn: 50, // Ekstra maliyet (Plugin Installation)
                 extraCostPlugInStandard: 50, // Ekstra maliyet (Plugin Installation)
                 extraSeoBasic: 200,
-                extraSeoAdvenced: 500,
+                extraSeoAdvenced: 200,
                 extraAddSeoBasic: false, // Ekstra SEO (Basic)
                 extraAddSeoAdvenced: false, // Ekstra SEO (Fortgeschrittene)
                 extraSeoBasicStandard: 200,
@@ -28,10 +29,13 @@ import emailjs from 'emailjs-com';
                 extraAddedPlugInStandard: false,
                 lieferTage: 7,
                 lieferTageStandard: 14,
+                lieferTageDynamiche: 30,
                 seitenZahl: 2,
                 seitenZahlStandart: 5,
+                seitenZahlDynamische: 5,
                 plugIn: 3,
                 plugInStandard: 14,
+                plugInStandardDynamiche: 60,
                 orderMessage: "",
                 orderMessageStandard: "",
                 disOn: false,
@@ -61,6 +65,11 @@ import emailjs from 'emailjs-com';
                 (this.extraAddedTreeDaysStandard ? this.extraCostStandard : 0)+
                 (this.extraAddedPlugInStandard ? this.extraCostPlugInStandard : 0)+
                 (this.extraAddSeoAdvenced ? this.extraSeoAdvenced : 0)
+            },
+            totalPriceDynamic(){
+                // Dimamik fiyat ve extra ücretin toplamı
+                return this.dynamicPreis
+
             },
             totalPriceStandandPlusMwSt() {
                 return (this.totalPriceStandand * 1.19).toFixed(2)
@@ -226,7 +235,7 @@ import emailjs from 'emailjs-com';
                                 <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">
                                     Umfang: Verbesserungen der Seitenladezeit, Bild- und Medienoptimierung, Caching-Strategien, grundlegende Geschwindigkeitstests und Berichte.
                                 </span>
-                                </span>(+{{ extraSeoBasic }} €)
+                            </span>(+{{ extraSeoBasic }} €)
                         </li>
                         <!-- <li><input type="checkbox" class="w3-check" v-model="extraAddSeoAdvenced" @change="updatePrice" style="cursor: pointer;">
                             SEO-Advenced (+{{ extraSeoAdvenced }} €)
@@ -275,6 +284,56 @@ import emailjs from 'emailjs-com';
                             Plugin-Installation (+7 Tage) (+{{ extraCostPlugInStandard }} €)
                         </li>
                         <li><input type="checkbox" class="w3-check" v-model="extraAddSeoAdvenced" @change="updatePrice" style="cursor: pointer;">
+                            <span class="w3-tooltip"> SEO-Basic
+                                <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">
+                                    Umfang: Verbesserungen der Seitenladezeit, Bild- und Medienoptimierung, Caching-Strategien, grundlegende Geschwindigkeitstests und Berichte.
+                                </span>
+                                </span>(+{{ extraSeoAdvencedStandard }} €)
+                        </li>
+                        <li>
+                            <p class="w3-small">Kosten pro Stunde <span class="w3-padding">"50 €"</span><br> (Allgemeines Webdesign - Technische Entwicklung-Spezialisierte Dienste(z.B.UX/UI-Design))
+                                <br>"Ich kann nicht ein halbes Projekt abschließen.Ich akzeptiere Projekte zum Starten und Beenden."
+                            </p>
+                        </li>
+                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClickStandard">Anfrage Senden</button></li>
+                    </ul>
+                </div>
+                <!-- <div v-if="orderMessageStandard" class="w3-center w3-padding-32 w3-animate-top w3-justify w3-margin-top w3-container w3-opacity-min">
+                    <div class="w3-red w3-animate-top w3-card-4 w3-display-middle w3-padding-32 w3-bottom" style="border-radius: 80% 20% / 10% 90%;">
+                        <button class="w3-display-topright w3-button w3-orange w3-tag" @click="close()">X</button>
+                        <p class="w3-left">Total: {{ totalPriceStandandPlusMwSt }} € inkl.MwSt</p>
+                        <p class="w3-container w3-padding-32 w3-large">{{ orderMessageStandard }}</p>
+                    </div>
+                </div> -->
+            </div>
+            <!-- Plus Paket -->
+            <div class="w3-col l3 s12 m6 w3-section" >
+                <div class="w3-card-4 w3-light-grey" style="">
+                    <ul class="w3-ul">
+                        <li class="w3-padding-32 w3-red w3-xlarge w3-text-black" style="border-radius: 80% 20% / 10% 90%;">Dynamische <span class="w3-tiny">(OHNE RECHTLICHE SEITEN)</span><span class="w3-right w3-badge w3-round-large w3-green w3-large">{{ totalPriceDynamic }} € </span>
+                        <span class="w3-right w3-round-large w3-small">zzgl. mwst.</span></li>
+                        <li><span class="w3-tooltip" style="cursor: pointer;">- Dynamische Webseite <span class="w3-text w3-tag" style="position: absolute; left:100px; bottom: 18px;">Ohne backend</span></span> <br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- {{ seitenZahlDynamische }} Seiten <span class="w3-text w3-tag" style="position: absolute; left:100px; bottom: 18px;">Der Verkäufer fügt die angegebene Anzahl an Seiten zu deiner Website hinzu.</span></span> <br>
+
+                            <span class="w3-tooltip" style="cursor: pointer;">- Responsive Design <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Verkäufer erstellt ein reaktionsfähiges Design, das alle Geräte unterstützt</span></span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- Design Anpassung <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Freelancer passt das Farbschema und das Layout deiner Website individuell an.</span></span><br>
+                            <span>- {{ lieferTageDynamiche }} Tage Lieferzeit</span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- Quellcode integrieren<span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Lege der Lieferung den Quellcode bei.</span></span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- Detaillierte Codekommentare<span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Freelancer fügt dem Code detaillierte Kommentare hinzu, die die Codestruktur erklären.</span></span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- Content Upload <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Freelancer lädt die bereitgestellten Inhalte auf Seiten/Blogs deiner Website hoch.</span></span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- Social-Media-Icons  <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Der Freelancer lädt die bereitgestellten Inhalte auf Seiten/Blogs deiner Website hoch.</span></span><br>
+                            <span class="w3-tooltip" style="cursor: pointer;">- {{ plugInStandardDynamiche }} Plugin-Installation  <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">Die Wartung der Website ist zwei Wochen kostenlos nach Lieferung.</span></span><br>
+                        </li>
+                        <li class="w3-opacity"><input type="checkbox" :disabled="true" class="w3-check" v-model="extraAddedTreeDaysStandard" @change="updatePrice" style="cursor: pointer;">
+                            Extraschnelle 22-tägige Lieferung (+{{ extraCostStandard }} €)
+                        </li>
+                        <li class="w3-opacity"><input type="checkbox" :disabled="true" class="w3-check" v-model="extraAddedSeitenStandard" @change="updatePrice" style="cursor: pointer;">
+                            Extra Seiten (+2 Seiten) (+{{ extraCostSeiten }} €)
+                        </li>
+                        <li class="w3-opacity"><input type="checkbox" class="w3-check w3-disabled" v-model="extraAddedPlugInStandard" @change="updatePrice" style="cursor: pointer;">
+                            Plugin-Installation (+7 Tage) (+{{ extraCostPlugInStandard }} €)
+                        </li>
+                        <li class="w3-opacity"><input type="checkbox" class="w3-check" :disabled="true" v-model="extraAddSeoAdvenced" @change="updatePrice" style="cursor: pointer;">
                             <span class="w3-tooltip"> SEO-Basic
                                 <span class="w3-text w3-tag" style="position: absolute; left: 100px; bottom: 18px;">
                                     Umfang: Verbesserungen der Seitenladezeit, Bild- und Medienoptimierung, Caching-Strategien, grundlegende Geschwindigkeitstests und Berichte.

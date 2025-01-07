@@ -1,5 +1,5 @@
 const express = require("express");
-const chatRoomService = require("../services/chatroom-service");
+const chatRoomService = require("../services/chat-room-socket/chatroom-service");
 
 const router = express.Router();
 

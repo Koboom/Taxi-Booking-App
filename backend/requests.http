@@ -344,7 +344,7 @@ POST https://backend-fimqwb2tta-ez.a.run.app/chatrooms HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Yüksel's Admin Room",
+  "name": "Hermes Paket Dienst",
   "participants": ["670bdcbf893828b18eed2fe4", "670b6c27d6e5a140e0644421"]
 }
 

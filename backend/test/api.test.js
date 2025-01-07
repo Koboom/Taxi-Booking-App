@@ -12,9 +12,9 @@ describe('API Testleri', () => {
   });
 
   // Diğer rota testleri burada...
-  describe('GET /users', () => {
+  describe('GET /customers', () => {
     it('Kullanıcıların başarıyla döndürülmesi gerekir', async () => {
-      const res = await request(app).get('/users');
+      const res = await request(app).get('/customers');
       expect(res.statusCode).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // Dönüş tipini kontrol et
     });
