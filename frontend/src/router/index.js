@@ -32,6 +32,8 @@ import ExifExtractor from "../components/ExifExtractor.vue"
 import RealTimeChat from '@/components/RealTimeChat.vue'
 import AdminPaneli from '@/components/AdminPaneli.vue'
 import TensorView from "@/components/TensorView.vue"
+import DefaultLayout from '@/views/blogs/DefaultLayout.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +42,11 @@ const router = createRouter({
       path: "/",
       name: "Home",
       component: Home
+    },
+    {
+      path: "/defaultAi",
+      name: "DefaultAi",
+      component: () => import("../views/ai/DefaultAi.vue")
     },
     {
       path: "/realTimeChat",
@@ -75,6 +82,27 @@ const router = createRouter({
       path: "/contact",
       name: "Contact",
       component: ContactForm
+    },
+    {
+      path: "/blogs",
+      name: "Blog",
+      component: () => import("../views/Blog.vue")
+    },
+    {
+      path: "/blogs/:blogId",
+      name: "BlogPosts",
+      component: () => import("../views/blogs/BlogPosts.vue"),
+      layout: DefaultLayout,
+      meta: {
+        title: "Blog Post Title",
+        description: "Blog Post Description",
+        keywords: ['blog', 'post', 'title', 'description']
+      }
+    },
+    {
+      path: "/blogs/blogadd",
+      name: "BlogAdd",
+      component: () => import("../views/blogs/BlogAdd.vue")
     },
     {
       path: "/passengers",

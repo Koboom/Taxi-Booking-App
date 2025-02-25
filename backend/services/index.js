@@ -14,6 +14,7 @@ const waiterService = require("./restaurant-dashboard/waiter-service")
 const userService = require("./user-service")
 const messageService = require("./chat-room-socket/message-service")
 const chatRoomService = require("./chat-room-socket/chatroom-service")
+const blogService = require("./blog/blog-service")
 
 
 module.exports = {
@@ -32,5 +33,6 @@ module.exports = {
     waiterService,
     userService,
     messageService,
-    chatRoomService
+    chatRoomService,
+    blogService
  }

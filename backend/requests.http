@@ -431,3 +431,17 @@ Content-Type: application/json
   "phone": "05551234561",
   "vip": true
 }
+
+###
+
+POST https://backend-563289858941.europe-west4.run.app/blogs
+Content-Type: application/json
+
+{
+  "title": "Yapay Zeka3",
+  "slug": "kullanım",
+  "content": "Presentation and Demo video: please shoot a video for your
+  presentation and demo of your project.Project Presentation: slides you are using during the presentation
+  ",
+  "author": "Yüksel"
+}

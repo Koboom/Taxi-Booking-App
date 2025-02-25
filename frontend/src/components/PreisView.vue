@@ -38,6 +38,7 @@ import emailjs from 'emailjs-com';
                 plugInStandardDynamiche: 60,
                 orderMessage: "",
                 orderMessageStandard: "",
+                orderMessageDynamische: "",
                 disOn: false,
                 disOnStandard: false,
                 formData: {
@@ -128,7 +129,24 @@ import emailjs from 'emailjs-com';
                 this.formData.message = this.orderMessageStandard + " Price: mit ink.MwSt: " + this.totalPriceStandandPlusMwSt + "€"
                 this.disOnStandard = !this.disOnStandard
                 this.orderMessageStandard=""
+            },
+            handleOrderClickDynamic(){
+                let message = `Sie haben eine Standart-Website bestellt mit ${this.seitenZahlDynamische} Seiten, die in ${this.lieferTageDynamiche} Tagen geliefert wird. Die Wartung der Website ist zwei Wochen kostenlos nach Lieferung.`
 
+                if (this.extraAddedTreeDaysStandard) {
+                    message += " Sie haben die schnelle Lieferung (7 Tage) ausgewählt.";
+                }
+                if (this.extraAddedSeitenStandard) {
+                    message += ` Es werden zusätzliche 2 Seiten enthalten sein.`
+                }
+                if (this.extraAddedPlugInStandard) {
+                    message += ` Sie haben ${this.plugInStandard} Plugin-Installationen gewählt.`
+                }
+
+                this.orderMessageDynamische = message
+                this.formData.message = this.orderMessageDynamische + " Price: mit ink.MwSt: " + this.totalPriceDynamic + "€"
+                this.disOnStandard = !this.disOnStandard
+                this.orderMessageDynamische=""
             },
             handleOrderClick() {
                 let message = `Sie haben eine Basis-Website bestellt mit ${this.seitenZahl} Seiten, die in ${this.lieferTage} Tagen geliefert wird.`
@@ -345,7 +363,7 @@ import emailjs from 'emailjs-com';
                                 <br>"Ich kann nicht ein halbes Projekt abschließen.Ich akzeptiere Projekte zum Starten und Beenden."
                             </p>
                         </li>
-                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClickStandard">Anfrage Senden</button></li>
+                        <li class="w3-center w3-padding-32"><button class="w3-button w3-green" @click="handleOrderClickDynamic">Anfrage Senden</button></li>
                     </ul>
                 </div>
                 <!-- <div v-if="orderMessageStandard" class="w3-center w3-padding-32 w3-animate-top w3-justify w3-margin-top w3-container w3-opacity-min">

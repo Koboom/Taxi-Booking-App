@@ -5,6 +5,7 @@ import MainZukunftView from '../src/components/MainZukunftView.vue';
 import PreisView from "../src/components/PreisView.vue";
 import DeviceLookSmart from "../src/components/DeviceLookSmart.vue";
 import DeviceLookTablet from "../src/components/DeviceLookTablet.vue"
+
 import App from './App.vue';
 import router from './router';
 import { io } from "socket.io-client"; // socket.io-client içe aktarıldı

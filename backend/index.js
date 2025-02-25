@@ -27,9 +27,11 @@ const tablesRouter = require("./routes/restaurant-dashboard/tables");
 const userRoutes = require("./routes/users");
 const messageRouter = require("./routes/message");
 const chatRoomRouter = require("./routes/chatrooms");
+const blogsRouter = require("./routes/blog/blogs")
 
 require("./mongo-connection"); // MongoDB bağlantısı
 const { initializeSocket } = require("./socket-connection");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
@@ -54,6 +56,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'], // Gerekli başlıkları ekle
   credentials: true
 }));
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.json());
 app.use(session({
@@ -84,6 +88,7 @@ app.use("/tables", tablesRouter);
 app.use("/users", userRoutes);
 app.use("/messages", messageRouter);
 app.use("/chatrooms", chatRoomRouter);
+app.use("/blogs", blogsRouter)
 
 // Hata yakalama
 app.use((err, req, res, next) => {

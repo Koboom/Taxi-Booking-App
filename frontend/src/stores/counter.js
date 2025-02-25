@@ -104,6 +104,69 @@ export const useCounterStore = defineStore('counter', () => {
     }
   }
 
+  async function fetchBlogs() {
+    try {
+      const response = await axios.get(`${BASE_URL}/blogs`)
+      return response.data
+    } catch(error) {
+      console.error('Error fetching blogs: ', error)
+      throw error;
+    }
+  }
+
+  async function fetchBlog(blogId) {
+    try {
+      const response = await axios.get(`${BASE_URL}/blogs/${blogId}`)
+      return response.data
+    } catch (error) {
+      console.error(`Error fetching blog ${blogId}:`, error)
+      throw error;
+    }
+  }
+
+  async function updateBlog(blogId, blogData) {
+    try {
+      const response = await axios.put(`${BASE_URL}/blogs/${blogId}`, blogData);
+      return response.data;
+    } catch (error) {
+      console.error(`Error updating item ${blogId}:`, error);
+      throw error;
+    }
+  }
+
+  async function addBlog(blogData) {
+    try {
+      console.log('Sending blog data:', blogData); // Gönderilen veriyi kontrol etmek için eklendi
+      const response = await axios.post(`${BASE_URL}/blogs`, blogData);
+      console.log('API Response:', response); // Yanıtı tam olarak kontrol etmek için eklendi
+      return response.data; // `response.data`'yı döndürün
+    } catch (error) {
+      if (error.response) {
+        console.error('API Error Response:', error.response.data);
+      } else if (error.request) {
+        console.error('No Response:', error.request);
+      } else {
+        console.error('Error Message:', error.message);
+      }
+      throw error;
+    }
+  }
+
+  async function deleteFetchBlog(blogId){
+    try {
+      const response = await axios.delete(`${BASE_URL}/blogs/${blogId}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      console.log("Dlete responce: ", response)
+      return response.data
+    } catch (error) {
+      console.error(`Error deleting item ${blogId}:`, error);
+      throw error;
+    }
+  }
+
   async function fetchPassenger(passengerId) {
     try {
       const response = await axios.get(`${BASE_URL}/passengers/${passengerId}`);
@@ -505,6 +568,11 @@ export const useCounterStore = defineStore('counter', () => {
     logout,
     login,
     loginUser,
-    registerUser
+    registerUser,
+    fetchBlogs,
+    fetchBlog,
+    updateBlog,
+    addBlog,
+    deleteFetchBlog
   }
 })

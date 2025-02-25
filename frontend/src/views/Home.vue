@@ -69,7 +69,7 @@ export default {
       <div class="header">
     <!--Content before waves-->
         <div class="inner-header flex w3-opacity-max">
-          <h1 class=""><i>Yüksel Software Development</i></h1>
+          <h2>Yüksel Software Development</h2>
           <div class="drop-container">
             <div class="drop"></div>
           </div>
@@ -103,8 +103,7 @@ export default {
         </div>
     </header>
     <!-- Device Looking -->
-    <div class="w3-row w3-hide-small w3-hide-medium">
-      <h2 class="w3-center">Responsive</h2>
+    <div class="w3-row w3-hide-small w3-hide-medium w3-margin-top">
       <div class="w3-col l4 w3-hide-small w3-hide-medium">
         <h3 class="w3-center">Mobile</h3>
         <device-look-smart></device-look-smart>
@@ -318,7 +317,7 @@ export default {
   .content {
     height:20vh;
   }
-  h1 {
+  h2 {
     font-size:24px;
   }
 }
@@ -345,10 +344,10 @@ div.drop {
   background: rgb(120, 183, 250);
   animation: drip 4s forwards;
 }
-h1 {
-  color: white;
+h2 {
+  color: red;
   position: absolute;
-  font-size: 2.5em;
+  /* font-size: 2.5em; */
   height: 1em;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 2;
