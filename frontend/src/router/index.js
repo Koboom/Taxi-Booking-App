@@ -44,6 +44,33 @@ const router = createRouter({
       component: Home
     },
     {
+      path: "/vue/vue_index",
+      name: "VueIndex",
+      component: () => import("../views/tutorials/vue/vue_index.vue"),
+      children: [
+        {
+          path: "/vue/vue_home",
+          name: "VueHome",
+          component: () => import("../views/tutorials/vue/vue_home.vue")
+        },
+        {
+          path: "/vue/vue_intro",
+          name: "Content1",
+          component: () => import("../components/vueTutorials/VueIntro.vue")
+        },
+        {
+          path: "/vue/content2",
+          name: "Content2",
+          component: () => import("../components/vueTutorials/VueContent2.vue")
+        },
+        {
+          path: "/vue/content3",
+          name: "Content3",
+          component: () => import("../components/vueTutorials/VueContent3.vue")
+        }
+      ]
+    },
+    {
       path: "/defaultAi",
       name: "DefaultAi",
       component: () => import("../views/ai/DefaultAi.vue")

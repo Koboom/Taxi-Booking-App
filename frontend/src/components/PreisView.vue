@@ -377,7 +377,7 @@ import emailjs from 'emailjs-com';
 
         </div>
     </div>
-    <div v-show="disOn" class="" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; " >
+    <div v-show="disOn" class="" style="position: fixed; top: 55%; left: 50%; transform: translate(-50%, -50%); width: 80%; " >
                     <div class="" >
                         <div class="w3-animate-top">
                             <span class="w3-button w3-text-blue w3-display-topright w3-xlarge w3-hover-red w3-transparent" @click="disOn = !disOn">&times;</span>
@@ -424,7 +424,7 @@ import emailjs from 'emailjs-com';
                         </div>
                     </div>
     </div>
-    <div v-show="disOnStandard"  style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; ">
+    <div v-show="disOnStandard"  style="position: fixed; top: 55%; left: 50%; transform: translate(-50%, -50%); width: 80%; ">
                     <div class="" >
                         <div class="w3-animate-top">
                             <span class="w3-button w3-text-blue w3-display-topright w3-xlarge w3-hover-red w3-transparent" @click="disOnStandard = !disOnStandard">&times;</span>

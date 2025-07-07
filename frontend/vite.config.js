@@ -15,14 +15,19 @@ export default defineConfig({
     watch: {
       usePolling: true,
     },
+    allowedHosts: [
+      'localhost',
+      'frontend-563289858941.europe-west4.run.app',
+      'yukselsoftware.de', // yukselsoftware.de ekleniyor
+    ],
   },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      'lib': path.resolve(__dirname, 'src/lib'),  // lib klasörüne alias ekledik
-    }
+      'lib': path.resolve(__dirname, 'src/lib'),
+    },
   },
   build: {
-    sourcemap: false  // Source map dosyalarını devre dışı bırakıyoruz
-  }
+    sourcemap: false,
+  },
 });

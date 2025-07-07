@@ -1,7 +1,7 @@
 <script></script>
 <template>
     <div class="w3-container w3-margin-top w3-margin-bottom">
-        <h2 class="w3-center">Software Haupt Menu</h2>
+        <h2 class="w3-center w3-text-black">Software Haupt Menu</h2>
 
         <a href="/taxiBookingsHauptSeite" class="w3-btn w3-round w3-third w3-card w3-margin-bottom">
                     <h3 class="">Taxi Bookings App</h3>

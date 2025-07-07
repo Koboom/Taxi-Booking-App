@@ -10,9 +10,9 @@
 </script>
 
 <template>
-    <div class="">
+    <div class="w3-margin-top">
         <div>
-        <h2 class="w3-center">Meine Referenz Templates</h2>
+        <h2 class="w3-center w3-text-red">Meine Referenz Templates</h2>
 
         <div class="w3-row-padding" style="margin-top: 64px;">
             <div class="w3-col l6 m6 w3-center w3-card w3-hover-opacity"><br>

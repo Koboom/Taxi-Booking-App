@@ -1,70 +1,9 @@
 <script>
-import { useCounterStore } from '@/stores/counter';
-import { mapActions } from 'pinia';
 
-export default {
-    name: "Passengers",
-    data() {
-        return {
-            passengers: [],
-            name: "",
-            surname: "",
-            location: "",
-            allBookings: [],
-            formData: {
-              formName: "",
-              formEmail: "",
-              formMessage: ""
-            }
-        }
-    },
-    async mounted() {
-        await this.updatePassengers()
-    },
-    computed: {
-        totalBookings() {
-            // Tüm yolcuların rezervasyon sayısını topla
-            return this.passengers.reduce((total, passenger) => total + passenger.bookings.length, 0);
-        }
-    },
-    methods: {
-    ...mapActions(useCounterStore, ["fetchPassengers", "addPassenger"]),
-    async updatePassengers() {
-        try {
-            this.passengers = await this.fetchPassengers();
-            this.allBookings = this.passengers.reduce((bookings, passenger) => bookings.concat(passenger.bookings), []);
-        } catch (error) {
-            console.error("Passagiere konnten nicht aktualisiert werden:", error);
-            alert('Passagiere konnten nicht aktualisiert werden. Bitte versuchen Sie es später noch einmal.');
-        }
-    },
-    async addNewPassenger() {
-        if (!this.name || !this.surname || !this.location) {
-            alert('Bitte füllen Sie alle Felder aus.');
-            return;
-        }
-        try {
-            await this.addPassenger({
-                name: this.name,
-                surname: this.surname,
-                location: this.location
-            });
-            this.name = "";
-            this.surname = "";
-            this.location = "";
-            await this.updatePassengers();
-        } catch (error) {
-            console.error("Passagiere konnten nicht aktualisiert werden:", error);
-            alert('Passagiere konnten nicht aktualisiert werden. Bitte versuchen Sie es später noch einmal.');
-        }
-    }
-}
-
-}
 </script>
 
 <template>
-    <div>
+    <div class="" id="home">
       <header class="w3-display-container">
       <div class="header">
     <!--Content before waves-->

@@ -2,7 +2,8 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
-const BASE_URL = 'https://backend-fimqwb2tta-ez.a.run.app/'
+// const BASE_URL = 'https://backend-fimqwb2tta-ez.a.run.app/'
+const BASE_URL = 'http://localhost:3000' // Local development URL
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)

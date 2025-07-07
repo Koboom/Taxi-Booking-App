@@ -1,10 +1,14 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+
 import FooterView from "../src/components/FooterView.vue";
 import MainZukunftView from '../src/components/MainZukunftView.vue';
 import PreisView from "../src/components/PreisView.vue";
 import DeviceLookSmart from "../src/components/DeviceLookSmart.vue";
 import DeviceLookTablet from "../src/components/DeviceLookTablet.vue"
+import Navbar from './components/Navbar.vue';
+import VueTutorialNavbar from './components/VueTutorialNavbar.vue';
+import Vue_right from './components/Vue_right.vue';
 
 import App from './App.vue';
 import router from './router';
@@ -27,6 +31,10 @@ app.component("main-zukunft", MainZukunftView);
 app.component("preis-view", PreisView);
 app.component("device-look-smart", DeviceLookSmart);
 app.component("device-look-tablet", DeviceLookTablet);
+app.component("Navbar", Navbar);
+app.component("VueTutorialNavbar", VueTutorialNavbar);
+app.component("Vue_right", Vue_right);
+
 
 app.use(createPinia());
 app.use(router);

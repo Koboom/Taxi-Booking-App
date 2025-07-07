@@ -44,7 +44,7 @@ import { mapActions } from 'pinia';
         </div>
         <!-- Large Image -->
         <table class="w3-table w3-bordered  w3-striped w3-hoverable w3-hide-small w3-hide-medium " style="cursor: pointer;">
-            <img v-if="item.imageUrl" :src="item.imageUrl" style="width: 300px; " alt="" class="">
+            <img v-if="item.imageUrl" :src="item.imageUrl" style="width: 300px; " alt="" >
             <tbody>
                 <tr>
                     <th class="w3-third">Name</th>

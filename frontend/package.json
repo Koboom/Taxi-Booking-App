@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@tensorflow/tfjs": "^4.22.0",
+    "@vueup/vue-quill": "^1.2.0",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
+    "bootstrap": "^5.3.3",
     "buttercms": "^3.0.0",
     "compressorjs": "^1.2.1",
     "cors": "^2.8.5",
@@ -30,8 +33,11 @@
     "pica": "^9.0.1",
     "pinia": "^2.1.7",
     "plotly": "^1.0.6",
+    "prismjs": "^1.30.0",
     "quill": "^2.0.3",
+    "quill-delta-to-html": "^0.12.1",
     "sharp": "^0.33.4",
+    "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.0",
     "vue": "^3.4.21",
     "vue-quill": "^1.5.1",
@@ -41,6 +47,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "sass": "^1.85.1",
     "vite": "^5.2.8",
     "vite-plugin-vue-devtools": "^7.0.25"
   }

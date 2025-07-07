@@ -27,7 +27,7 @@ export default {
 <template>
     <div class="w3-container">
         <h2>Blogs</h2>
-        <p>Coming soon...</p>
+        <p class="">Coming soon...</p>
         <ol class="">
             <li v-for="blog in blogs"
             :key="blogId"
