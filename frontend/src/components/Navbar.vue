@@ -15,7 +15,7 @@ export default {
 <template>
     <div class="w3-top">
         <div class="w3-bar w3-card-4" style="background-color:#090c11; color: #dde4ee;">
-            <router-link to="/" id="home" class="w3-button w3-hover-green w3-right w3-ripple w3-bar-item">HOME
+            <router-link to="/" id="home" class="w3-button w3-hover-green w3-ripple w3-bar-item">HOME
                 <i class="fa fa-home"></i>
             </router-link>
             <!-- <router-link to="/register" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Register</router-link> -->
