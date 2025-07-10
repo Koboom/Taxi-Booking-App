@@ -25,8 +25,8 @@ export default {
             <router-link to="/work" class="w3-button w3-bar-item w3-right w3-hide-small w3-hover-green w3-hide-medium">Work(Template)</router-link>
             <router-link to="/vue/vue_index" class="w3-button w3-bar-item w3-right w3-hover-green w3-hide-small w3-hide-medium">Vue Tutorial (TR)</router-link>
             <!-- <router-link to="/blogs" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Blog</router-link> -->
-            <!-- <router-link to="/defaultAi" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Machine Learning</router-link>
-            <router-link to="/blogs/BlogAdd" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">BlogAdd</router-link> -->
+            <!-- <router-link to="/defaultAi" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Machine Learning</router-link> -->
+            <!-- <router-link to="/blogs/BlogAdd" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">BlogAdd</router-link> -->
             <!-- <router-link to="/blogs/BlogAdd" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">BlogAdd</router-link> -->
             <!-- <router-link to="/tensor" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Yapay Zeka</router-link> -->
             <!-- <router-link to="/tensor" class="w3-button w3-bar-item w3-right w3-hide-small w3-hide-medium">Tensor</router-link> -->

@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <div class="w3-margin-top">
+    <div class="w3-margin-top w3-padding-64 " id="work">
         <div>
         <h2 class="w3-center w3-text-red">Meine Referenz Templates</h2>
 
