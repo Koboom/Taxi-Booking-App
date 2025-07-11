@@ -86,9 +86,11 @@ import { mapActions } from 'pinia';
 </script>
 
 <template >
-  <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
+  <div class="w3-container">
+    <p class="w3-panel w3-leftbar w3-border-green w3-pale-red w3-round-large">
       Es handelt sich um eine Demoseite.
-  </p>
+    </p>
+  </div>
   <div class="">
       <div class="w3-bar w3-black w3-large" style="z-index:4">
           <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" @click="sidebarOpen = !sidebarOpen">
