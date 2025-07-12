@@ -53,9 +53,9 @@
       </div>
     </div>
     <!-- Preis View -->
-    <div>
+    <!-- <div>
       <preis-view></preis-view>
-    </div>
+    </div> -->
     <!-- Main View -->
     <div>
       <main-zukunft></main-zukunft>
